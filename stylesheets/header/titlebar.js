@@ -9,10 +9,10 @@ function load_titlebar_stylesheet(){
 }
 
 function titlebar_onscroll(){
-    stickstate_now = (titlebar.offsetTop <= window.scrollY);
-    console.log(stickstate_now);
+    stickstate_now = (titlebar.offsetTop <= (window.scrollY + 1));//RUNDEN statt +1 ????
+    //console.log(stickstate_now);
     if(stickstate_now == stickstate_before){
-        console.log("no change");
+        //console.log("no change");
     }else{
         if(stickstate_now == true){
             titlebar_onsticky();
@@ -46,7 +46,9 @@ function titlebar_onnotsticky(){
         titlebar_title.classList.toggle("titlebar_title_invisible");
         var timeout_duration = parseFloat(window.getComputedStyle(titlebar_title).animationDuration) * 1000;
         setTimeout(function() {
-            titlebar_title.style.display = "none";
+            if(titlebar_title.classList == "titlebar_title_invisible"){
+                titlebar_title.style.display = "none";
+            }
         }, timeout_duration-110);
     }
 }
