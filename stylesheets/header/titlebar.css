@@ -1,0 +1,86 @@
+#titlebar{
+    background-color:gray;
+    display: flex;
+    position:sticky;
+    top:0;
+    flex-wrap: wrap;
+}
+
+#titlebar a{
+    padding: 1em;
+}
+
+#titlebar a:hover{
+    background-color: red;
+}
+
+#titlebar_title{
+    margin:1em;
+    max-width: fit-content;
+    flex-wrap: wrap;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.titlebar_title_invisible{
+    display:none;
+    opacity: 0;
+    width: 0%;
+    margin:0em;
+    animation-name: titlebar_title_hide;
+    animation-duration: 3s;
+}
+
+.titlebar_title_visible{
+    display:unset;
+    opacity: 1;
+    width:100%;
+    margin:1em;
+    animation-name: titlebar_title_show;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+}
+
+@keyframes titlebar_title_show {
+    0%{display:none; opacity:0; width:0%; margin:0em;}
+    30%{display:unset; opacity:0; width:100%; margin:1em; animation-timing-function: ease-out;}
+    80%{display: unset; opacity: 1;}
+    100%{display:unset; opacity:1;}
+}
+
+/*@keyframes titlebar_title_hide{
+    0%{display:unset; opacity:1;}
+    20%{display: unset; opacity: 1;}
+    70%{display:unset; opacity:0; width:100%; margin:1em; animation-timing-function: ease-out;}
+    100%{display:none; opacity:0; width:0%; margin:0em;}
+}*/
+
+@keyframes titlebar_title_hide {
+    0%{display:unset; opacity:1; width:100%; margin:1em}
+    90%{display:unset; opacity:0; width:100%; margin:1em}
+    100%{display:none; width: 0%; margin:0em}
+}
+
+@media screen and (max-width: 400px) {
+    /*#titlebar{
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    #titlebar a{
+        padding:1em 0 1em;
+        text-align: center;
+        width: 100%;
+    }
+    #titlebar_title{
+        font-size: 2em;
+        margin:0.3em;
+        text-align: center;
+    }*/
+    #titlebar a{
+        display: none;
+    }
+    #titlebar_title:hover{
+        cursor:pointer;
+    }
+}
