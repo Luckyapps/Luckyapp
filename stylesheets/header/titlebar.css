@@ -4,6 +4,10 @@
     position:sticky;
     top:0;
     flex-wrap: wrap;
+    width: 98%;
+    margin: 0 1% 0 1%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
 
 #titlebar a{
@@ -61,7 +65,7 @@
     100%{display:none; width: 0%; margin:0em}
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 700px) {
     /*#titlebar{
         flex-wrap: wrap;
         flex-direction: column;
@@ -83,4 +87,58 @@
     #titlebar_title:hover{
         cursor:pointer;
     }
+}
+
+#sidecard{
+    position:fixed;
+    top:0;
+    width:100%;
+    height: 100%;
+    background-color: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sidecard_content{
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    text-align: center;
+}
+
+#sidecard_close_button{
+    color:red;
+    font-size: 3em;
+    position:absolute;
+    top:20px;
+    right:20px;
+    font-weight: bolder;
+    cursor:pointer;
+}
+
+.sidecard_open{
+    left:0%;
+    animation-duration: 1s;
+    animation-name: sidecard_open_ani;
+}
+
+.sidecard_close{
+    left:-100%;
+    animation-duration: 1s;
+    animation-name: sidecard_close_ani;
+}
+
+.sidecard_closed_first{
+    left:-100%;
+}
+
+@keyframes sidecard_open_ani {
+    0%{left:-100%}
+    100%{left:0%}
+}
+
+@keyframes sidecard_close_ani {
+    0%{left:0%}
+    100%{left:-100%}
 }

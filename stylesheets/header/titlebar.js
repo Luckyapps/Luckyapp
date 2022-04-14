@@ -3,9 +3,12 @@ var stickstate_before = false, stickstate_now = false, titlebar_state = "close";
 function load_titlebar_stylesheet(){
     var titlebar = document.getElementById("titlebar");
     var titlebar_title = document.getElementById("titlebar_title");
+    var sidecard = document.getElementById("sidecard");
+    var sidecard_close_button = document.getElementById("sidecard_close_button");
 
     document.addEventListener("scroll", titlebar_onscroll);
     titlebar_title.addEventListener("click", titlebar_open_mobile);
+    sidecard_close_button.addEventListener("click", sidecard_close);
 }
 
 function titlebar_onscroll(){
@@ -25,7 +28,7 @@ function titlebar_onscroll(){
 
 function titlebar_onsticky(){
     console.log("STICK");
-    if(body.clientWidth <= 400){
+    if(body.clientWidth <= 700){
         titlebar_title.classList = "";
         titlebar_title.style.display = "unset";
     }else{
@@ -37,7 +40,7 @@ function titlebar_onsticky(){
 
 function titlebar_onnotsticky(){
     console.log("NOSTICK");
-    if(body.clientWidth <= 400){
+    if(body.clientWidth <= 700){
         titlebar_title.classList = "";
         titlebar_title.style.display = "none"
     }else{
@@ -54,9 +57,22 @@ function titlebar_onnotsticky(){
 }
 
 function titlebar_open_mobile(){
-    if(body.clientWidth <= 400){
+    if(body.clientWidth <= 700){
         if(titlebar_state == "close"){
-
+            console.log("OPEN");
+            sidecard.classList = "sidecard_open";
+            body.style.overflow = "hidden";
+            titlebar_state = "open";
+        }else{
+            sidecard_close();
+            console.log("CLOSE")
+            titlebar_state = "close";
         }
     }
+}
+
+function sidecard_close(){
+    sidecard.classList = "sidecard_close";
+    titlebar_state = "close";
+    body.style.overflow = "unset";
 }
