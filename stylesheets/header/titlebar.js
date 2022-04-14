@@ -31,6 +31,8 @@ function titlebar_onsticky(){
     if(body.clientWidth <= 700){
         titlebar_title.classList = "";
         titlebar_title.style.display = "unset";
+        titlebar.style.backgroundColor = window.getComputedStyle(header).backgroundColor;
+        titlebar.style.boxShadow = window.getComputedStyle(header).boxShadow;
     }else{
         titlebar_title.style.display = "unset";
         titlebar_title.classList = "";
@@ -42,7 +44,7 @@ function titlebar_onnotsticky(){
     console.log("NOSTICK");
     if(body.clientWidth <= 700){
         titlebar_title.classList = "";
-        titlebar_title.style.display = "none"
+        titlebar_title.style.display = "none";
     }else{
         titlebar_title.style.display = "unset";
         titlebar_title.classList = "";
@@ -54,6 +56,8 @@ function titlebar_onnotsticky(){
             }
         }, timeout_duration-110);
     }
+    titlebar.style.backgroundColor = "";
+    titlebar.style.boxShadow = "";
 }
 
 function titlebar_open_mobile(){
