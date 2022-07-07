@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="../images/minecraft.png" type="image/png">
+    <title>Minecraft</title>
+    <link href="../main/style.css" rel="stylesheet" type="text/css" />
+    <link href="minecraft.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body onload="laden()">
+    <script src="minecraft.js"></script>
+
+    <div class="header">
+      <h1>Minecraft</h1>
+    </div>
+
+    <div class="nav">
+      <a href="../index.html" >Home</a>
+      <a href="../rechner/rechner.html" >Rechner</a>
+      <a href="../fastlink/fastlink.html">Fastlink</a>
+      <a href="../musik/musik2.html">Musik</a>
+      <a href="../tools/tools.html">Tools</a>
+      <a href="" style="background-color:rgba(95, 95, 31, 0.562)">Minecraft</a>
+      <a class="coronanav" href="../corona/corona.html">Corona News</a>
+    </div>
+
+    <div class="row">
+
+      <div class="left">
+        <div class="card">
+          <h2>Infobox</h2>
+          <p>Hier gibt es eine Übersich über die Server von Luckyapps:</p>
+          <ul>
+            <li>Sky Modpack server</li>
+            <li>Redstone Server</li>
+            <li>Survival Server</li>
+          </ul>
+          <p style="color:orange">Der Status wird alle 5 Minuten aktualisiert.</p>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="card">
+          <h2>Serverstatus</h2>
+          <p id="motd">Lade motd...</p>
+          <img style="border-radius:0;" id="icon" alt="Lade icon..."></img>
+          <p id="version">Version: Laden...</p>
+          <p id="online">Online: Laden...</p>
+          <p id="ip">IP: ...</p>
+          <p id="beschreibung">Keine Beschreibung verfügbar.</p>
+          <p id="modinfo">Suche nach Mods...</p>
+          <ul id="mods"></ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <a href="../support/support.html" style="border-right:gray solid 1px; padding-right:1em;">Support</a>
+      <a href="../entwicklung/entwicklung.html" style="padding-left:1em;border-right:gray solid 1px; padding-right:1em;">Entwicklung</a>
+      <a href="../impressum/impressum.html" style="padding-left:1em;">impressum</a>
+    </div>
+
+  </body>
+</html>

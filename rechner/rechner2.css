@@ -1,0 +1,18 @@
+body{
+  color:white;
+}
+
+.container{
+  border:2px solid yellow;
+  width: 50%;
+  position: relative;
+  left:50%;
+  transform:translate(-50%,0%)
+}
+
+.zahl{
+  display:inline-block;
+  font-size:3em;
+  margin:0.05em;
+  text-align: left;
+}

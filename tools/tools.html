@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="../images/tools.jpg" type="image/png">
+    <title>Tools</title>
+    <link href="../main/style.css" rel="stylesheet" type="text/css" />
+    <link href="tools.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body id="Seite" onload="start_geo()"><!-- TEMP ONLOAD -->
+    <script src="tools.js"></script>
+    <script src="/main/style.js"></script>
+
+    <div class="header">
+      <h1>Tools</h1>
+    </div>
+
+    <div class="nav">
+      <a href="../index.html" >Home</a>
+      <a href="../rechner/rechner.html" >Rechner</a>
+      <a href="../fastlink/fastlink.html">Fastlink</a>
+      <a href="../musik/musik2.html">Musik</a>
+      <a href="" style="background-color:rgba(95, 95, 31, 0.562)">Tools</a>
+      <a href="../minecraft/minecraft.html">Minecraft</a>
+      <a class="coronanav" href="../corona/corona.html">Corona News</a>
+    </div>
+
+    <div class="row">
+    <div class="left">
+      
+      <div class="card" id="passwortT">
+        <h1>Passwort Generator</h1>
+
+        <button class="art wahl" id="pw" value="pw" onclick="arten(this)">Passwort</button>
+        <button class="wahl" id="pin" value="pin" onclick="arten(this)">Pin</button>
+
+        </br>
+        <label for="number">Anzahl der Zeichen:</label> 
+         <input type="number" id="number" name="Nummer eingeben" title="Nummer eingeben" value="8"></input>
+
+        <button id="generate" onclick="generate()">Passwort generieren</button>
+
+        <div id="fertig"><h2>Dein Passwort lautet: </h2><!--<input id="passwort"></input>--><p id="passwort"></p></div>
+        <!--<button onclick="copyPasskey()" id="copy">kopieren</button>-->
+      </div>
+
+      <div class="card" id="assistantT">
+        <h1>Lucky-Assistant</h1>
+        <script src="https://assistant.thebuissnescree.repl.co/assistant_core.js"></script>
+
+         <p id="ausgabe"></p>
+         <input type="text" id="eingabe"></input>
+         <button onclick="assistant_start()" id="startbutton">Senden</button>
+      </div>
+
+      <div class="card" id="geodatenT">
+        <h1>Geodaten</h1>
+        <h2><font color="red">An dieser Funktion wird noch gearbeitet.</font></h2>
+        <script src="https://geo.thebuissnescree.repl.co/script.js"></script>
+        <div id="ausgabe_geo"></div>
+      </div>
+
+      <div class="card" id="extensionT">
+        <h1>Chrome Erweiterung</h1>
+        
+        <p style="margin-bottom:0">Eine Chrome Erweiterung, die... <li>...den Google-Darkmode verschönert, indem sie die Logos Bunt macht.</li><li>...einen Darkmode für Wikipedia hinzufügt.</li></p>
+        <span style="text-align:left">
+        <p style="margin-bottom:0;"><b><u>Installation:</u></b></p>
+        <ol style="margin-top:0;">
+          <li>Luckyextension Ordner Entpacken.</li>
+          <li>Im Browser in die Erweiterungsverwaltung gehen.</li>
+          <li>Den Entwicklermodus einschalten.</li>
+          <li>Auf 'Entpackte Erweiterung Laden' klicken.</li>
+          <li>Den 'Luckyextensions' Ordner auswählen.</li>
+        </ol></p>
+        </stan>
+        <button onclick="download('https://luckyapp2.thebuissnescree.repl.co/tools/Luckyextension.zip', 'Luckyextension')">Download</button>
+      </div>
+
+      <div class="card" id="hangmanT">
+        <h1>Hangman Minigame</h1>
+        <iframe id="HangmanIframe" style="width:100%; border:none" src="https://hangman.thebuissnescree.repl.co/luckyapp.html"></iframe>
+      </div>
+
+    </div>
+
+    <div class="right">
+      <div class="card">
+        <h1>Inhaltsverzeichnis</h1>
+        <ul>
+          <li><a href="#passwortT">Passwortgenerator</a></li>
+          <li><a href="#assistantT">Luckyassistant</a></li>
+          <li><a href="#geodatenT">Geodaten</a></li>
+          <li><a href="#extensionT">Chrome Erweiterung</a></li>
+          <li><a href="#hangmanT">Hangman Minigame</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+
+    <div class="footer">
+      <a href="../support/support.html" style="border-right:gray solid 1px; padding-right:1em;">Support</a>
+      <a href="../entwicklung/entwicklung.html" style="padding-left:1em;border-right:gray solid 1px; padding-right:1em;">Entwicklung</a>
+      <a href="../impressum/impressum.html" style="padding-left:1em;">impressum</a>
+    </div>
+
+  </body>
+</html>

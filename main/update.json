@@ -1,0 +1,62 @@
+{
+  "info":[
+    {
+      "titel":"Luckyapp Update 1|nov21",
+      "datum":"06.11.2021",
+      "typ":"UPDATE",
+      "header":"Luckyapp Update 1|nov21",
+      "content":"Es wurden einige Änderungen vorgenomen: <ul><li>Home<ul><li>Es wurden verbesserungen am Updatebanner vorgenommen:<ul><li>Es gibt jetzt Klickaktionen: Beim klicken auf das Banner werden die passenden Updatedetails geöffnet.</li><li>Es wurde ein Fehler behoben, der die Anzeige des Updatebanners beim Update von alten versionen verhinderte.</li></ul></li><li>Designänderung in der Updateinfoanzeige: Es wurde ein Strich zwischen dem Inhalt und der Fußnote hinzugefügt.</li></ul></li><li>Design<ul><li>Alle Buttons haben jetzt eine Klickanimation</li></ul></li><li>Updatearchiv<ul><li>Es wurde ein Fehler behoben, der dafür sorgte, dass nicht alle Updates angezeigt wurden</li></ul></li><li>Corona News <ul><li>Der Bereich Corona-Schutzverordnung wurde aktualisiert.</li></ul></li> </li></ul>" 
+    },
+    {
+      "titel":"Luckyapp Update 1|okt21 : Chrome Extension and convenience Update",
+      "datum":"18.10.2021",
+      "typ":"UPDATE",
+      "header":"Luckyapp Update 1|okt21 : Chrome Extension and convenience Update",
+      "content":"Es wurden einige Änderungen vorgenommen: <ul><li>Luckyapp auf IPads<ul><li>Es wurde ein <b>Fehler behoben</b>, durch den die Schriftfarbe aller Buttons blau war.</li></ul><li>Rechner<ul><li>Der Rechner wurde auf Version v2.1.1 <b>geupdated</b>.</li></ul><li>Tools<ul><li>Das Tool 'Chrome Extension' wurde hinzugefügt. Dort kann man die <b>Chromeerweiterung 'Luckyextension' herunterladen</b>.<br>-->Die Luckyextension fügt dem Browser einen schöneren Google-Darkmode und einen Wikipedia-Darkmode hinzu.</li></ul><li>Home<ul><li>Es wurde ein Banner hinzugefügt, welches <b>auf neue Updates hinweist</b>.</li></ul></li></ul>" 
+    },
+    {
+      "titel":"Luckyapp Update 1|sep21 : Update Update",
+      "datum":"28.09.2021",
+      "typ":"UPDATE",
+      "header":"Luckyapp Update 1|sep21 : Update Update",
+      "content":"Es wurde einige Änderung vorgenommen: <ul><li>Home<ul><li>Die <b>Updateinfo-Liste</b> wurde komplett neu Programmiert.<br>-->Einige ältere Zeilen wurden gelöscht.</li><li>Die alten Updates können im neuen <b>Archiv</b> angeschaut werden.</li></ul></li></ul>" 
+    },
+    {
+      "titel":"Luckyapp Update 1|aug21 : Rechner Update",
+      "datum":"19.08.2021",
+      "typ":"UPDATE",
+      "header":"Luckyapp Update 1|aug21 : Rechner Update",
+      "content":"Es wurden einige kleine Änderungen vorgenommen: <ul><li>Rechner<ul><li>Wenn man mit der <b>Maus</b> über die Buttons geht, wird sie zum Cursor.</li><li>Das <b>Design des Titels</b> wurde an die anderen angepasst.</li><li>Die <b>Buttons</b> für das Anzeigen, Einsetzen und Löschen der letzten Ergebnisse wurden <b>neu designed</b>.</li><li>Wenn man einen Button drückt, wird der Rechner genau <b>ins Sichtfeld gescrollt</b>.</li></ul></li><li>Corona News:<ul><li>Der Bereich Coronaschutzverordnung NRW wurde aktualisiert (Aufgrund von änderungen in der Verordnung).</li></ul></li></ul>"
+    },
+    {
+      "titel":"Luckyapp Update 1|jul21 : Hangman Update",
+      "datum":"19.07.2021",
+      "typ":"UPDATE",
+      "header":"Luckyapp Update 1|jul21 : Hangman Update",
+      "content":"Es wurden einige kleine Änderungen vorgenommen: <ul><li>Tools:<ul><li>Neues Tool: <b>Hangman Minigame</b>.<br> --> Hier kann man ab sofort eine Runde Hangman spielen.</li><li>Neues Tool: <b>Geodaten</b>.<br>--> Hier kann man sich Informationen über den eigenen Standort anschauen. (Diese Funktion befindet sich noch in der Entwicklung)</li><li>Da es nun immer mehr Tools werden, wurde ein <b>Inhaltsverzeichnis</b> hinzugefügt.</li></ul></li><li>Corona News:<ul><li>Der Bereich Coronaschutzverordnung NRW wurde aktualisiert (Aufgrund von änderungen in der Verordnung).</li></ul></li></ul>"
+    },
+    {
+      "titel":"Luckyapp Update 1|jun21",
+      "datum":"19.05.2021",
+      "typ":"UPDATE",
+      "header":"Luckyapp Update 1|jun21",
+      "content":"Es wurden einige kleine Änderungen vorgenommen: <ul><li>Fastlink:<ul><li>Neuer Unterpunkt: Schule > Berufskolleg Meschede ><b> Aktuelles</b> </li><li>Wenn man von einer Unterseite wieder auf die erste Seite zurückkehrt, wird die Navigationsleiste aus dem Weg gescrollt.</li><li>Luckyapp hat nun eine Versionsnummer. Die jetztige ist: 2.1.</li></ul></li><li>Corona News<ul><li>Der Titelname wurde angepasst (Corona --> Corona News)</li><li>Neuer Bereich: Coronaschutzverordnung NRW. Hier kann man sehen, ab welcher Inzidenz was gilt.</li></ul></li></ul>"
+    }
+  ],
+  "Vorlage":[
+    {
+      "titel":"",
+      "datum":"",
+      "typ":"",
+      "header":"",
+      "content":"" 
+    },
+    {}
+  ],
+  "Update Notizen":[
+    {
+      "Update":"Luckyapp Update 1|dez21 : ",
+      "content":"Hangman verbessert: unterstüzung ü,ö,ß usw.; | info container: mobile version width:100%; | Hangman: bessere Farbe für kommas, punkte: lime statt blau "
+    }
+  ]
+}

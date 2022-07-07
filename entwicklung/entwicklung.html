@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Weiterleitung--
+    <meta http-equiv="Refresh" content="0; url=../main/wartung.html"/>-->
+    <html lang="de-de">
+      <meta name="theme-color" content="black"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Entwicklung</title>
+    <link href="../main/style.css" rel="stylesheet" type="text/css" />
+    <link href="entwicklung.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body onload="load_info()">
+    <script src="entwicklung.js"></script>
+    <script src="../main/update-list.js"></script>
+
+    <div class="header">
+      <h1>Entwicklung</h1>
+      <!--<h2>Version2</h2>-->
+    </div>
+
+    <div class="nav">
+      <a href="../index.html">Home</a>
+      <a href="../rechner/rechner.html">Rechner</a>
+      <a href="../fastlink/fastlink.html">Fastlink</a>
+      <a href="../musik/musik2.html">Musik</a>
+      <a href="../tools/tools.html">Tools</a>
+      <a href="../minecraft/minecraft.html">Minecraft</a>
+      <a class="coronanav" href="../corona/corona.html">Corona News</a>
+    </div>
+
+    <div class="row">
+
+      <div class="left">
+
+        <div class="card">
+          <h1>Willkommen im Entwicklungsteil</h1>
+          <p>Hier gibt es Informationen über geplante Funktionen und Funktionen, die bereits entwickelt werden.</p>
+        </div>
+        <div class="card">
+          <h2>Versionsinformation</h2>
+          <ul>
+            <li><u><b>Luckyapp:</b></u> v2 Update: 1|nov21</li>
+            <li><u><b>Rechner:</b></u> v2.1.1</li>
+            <li><u><b>Fastlink:</b></u> v2.2</li>
+            <li><u><b>Luckyapp-Musik:</b></u> v2</li>
+            <li><u><b>Luckyapp-Minecraft:</b></u> v1</li>
+            <li><u><b>Corona News</b></u> v1.3</li>
+            <!--<li><u><b></b></u> Version: </li>-->
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Geplante Updates:</h2>
+          <ul>
+            <li>Fastlink neu ordnen und aufräumen</li>
+            <li>Interner Bereich</li>
+            <li>Erweitern der Inhalte im Musikteil</li>
+            <li>(Favicons hinzufügen.)</li>
+            <li>Supportseite</li>
+            <li>Impressum</li>
+            <li>technische Änderungen Fastlink (sessionStorage entfernen)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>In Arbeit:</h2>
+          <ul>
+            <li>Anmeldeformular für internen Bereich</li>
+            <li>Verbesserung und Test des Offlinemodus</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Geplant und in Arbeit bei unseren anderen Apps</h2>
+          <div class="container">
+          <h3>Nasa Api Request:</h3> <!-- Nasa API Request -->
+          <h4>Geplant</h4>
+          <ul>
+            <li>Hinzufügen weiterer Filter.</li>
+            <li>Anzeige von Audios.</li>
+          </ul>
+          <h4>In Arbeit</h4>
+          <ul>
+            <li>Anzeige von Videos.</li>
+          </ul>
+          </div>
+          <div class="container">
+          <!--<h3>Assistant:</h3> <!-- Assistant -->
+          <h3>Wildshausen:</h3> <!-- Wildshausen -->
+          <h4>Geplant</h4>
+          <ul>
+            <li>Die Seite mit konkreten Inhalten füllen.</li>
+          </ul>
+          <h4>In Arbeit</h4>
+          <ul>
+            <li>Überarbeitung der Galerie.</li>
+            <li>Sonstige technische Änderungen.</li>
+          </ul>
+          </div>
+          <div class="container">
+          <h3>Carpedia:</h3> <!-- Autopedia -->
+          <h4>Geplant</h4>
+          <ul>
+            <li>Die Seite mit konkreten Inhalten füllen.</li>
+            <li>technische optimierung.</li>
+          </ul>
+          </div>
+          <div class="container">
+            <h3>Musik:</h3> <!-- Musik -->
+            <h4>Geplant</h4>
+            <ul>
+              <li>Mehr Inhalte hinzufügen.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="right">
+        
+        <div class="card">
+          <h2>Neuste Updates</h2>
+          <!--<p style="color:red">Wir arbeiten an dieser Funktion</p>
+          <p>Updates können unter <a href="../index.html#updates">Home</a> angesehen werden: </p>
+          <iframe scrolling="no" style="border:none;width:100%; height: 20em;" src="../index.html#updatelist"></iframe>-->
+          <ul id="updatelist" class="li_clickable"></ul>
+          <a href="/main/old_update/old_update.html">Archiv</a>
+        </div>
+        
+        <div class="card" id="sidenav" style="position:sticky;top:0;">
+          <h2>Sitemap</h2>
+          <ul>
+            <li><a href="">Geplante Updates</a></li>
+            <li><a href="">In Arbeit</a></li>
+            <li><a href="">Geplant und in Arbeit bei unseren anderen Apps</a></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+
+    <div class="footer">
+      <a href="../support/support.html" style="border-right:gray solid 1px; padding-right:1em;">Support</a>
+      <a href="../impressum/impressum.html" style="padding-left:1em;">impressum</a>
+    </div>
+
+
+    <div id="info_" onclick="info_close()">
+    <div id="info_container">
+      <h1 id="info_header">test</h1>
+      <hr>
+      <p id="info_text"></p>
+    </div>
+    </div>
+
+    
+  </body>
+</html>

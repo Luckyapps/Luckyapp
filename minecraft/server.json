@@ -1,0 +1,19 @@
+{
+  "server":[
+    {
+      "name":"Noah sky",
+      "motd":"<span style=\"color: #00AAAA\"><span class=\"minecraft-formatted--obfuscated\">!</span></span><span style=\"color: #AA00AA\"><span class=\"minecraft-formatted--obfuscated\">!</span></span><span style=\"color: #FFAA00\"><span class=\"minecraft-formatted--obfuscated\">!</span></span><span style=\"color: #55FF55\"><span class=\"minecraft-formatted--obfuscated\">!</span></span><span style=\"color: #55FF55\"> Sky Modpack Server</span><span style=\"font-weight: bold;\"> |</span><span style=\"color: #FFFF55\"> 1.7.10</span><span style=\"color: #00AAAA\"><span class=\"minecraft-formatted--obfuscated\"> !</span></span><span style=\"color: #AA00AA\"><span class=\"minecraft-formatted--obfuscated\">!</span></span><span style=\"color: #FFAA00\"><span class=\"minecraft-formatted--obfuscated\">!</span></span><span style=\"color: #55FF55\"><span class=\"minecraft-formatted--obfuscated\">!</span></span>",
+      "beschreibung":"Ein Minecraft Modpackserver mit dem Skymodpack."
+    },
+    {
+      "name":"Redstone",
+      "motd":"<span style=\"color: #00AAAA\"><span class=\"minecraft-formatted--obfuscated\">!</span></span><span style=\"color: #AA00AA\"><span class=\"minecraft-formatted--obfuscated\">!</span></span><span style=\"color: #FFAA00\"><span class=\"minecraft-formatted--obfuscated\">!</span></span><span style=\"color: #55FF55\"><span class=\"minecraft-formatted--obfuscated\">!</span></span><span style=\"color: #55FF55\"> Restone Server</span><span style=\"font-weight: bold;\"> |</span><span style=\"color: #FFFF55\"> 1.16.5</span><span style=\"color: #00AAAA\"><span class=\"minecraft-formatted--obfuscated\"> !</span></span><span style=\"color: #AA00AA\"><span class=\"minecraft-formatted--obfuscated\">!</span></span><span style=\"color: #FFAA00\"><span class=\"minecraft-formatted--obfuscated\">!</span></span><span style=\"color: #55FF55\"><span class=\"minecraft-formatted--obfuscated\">!</span></span>",
+      "beschreibung":"Eine Redstonemap. Es gibt hier u.a. einen Redstone Taschenrechner."
+    },
+    {
+      "name":"GO_ON",
+      "motd":"<span style=\"color: #00AAAA\"><span class=\"minecraft-formatted--obfuscated\">!</span></span><span style=\"color: #AA00AA\"><span class=\"minecraft-formatted--obfuscated\">!</span></span><span style=\"color: #FFAA00\"><span class=\"minecraft-formatted--obfuscated\">!</span></span><span style=\"color: #55FF55\"><span class=\"minecraft-formatted--obfuscated\">!</span></span><span style=\"color: #55FF55\"> GO_ON Server</span><span style=\"font-weight: bold;\"> |</span><span style=\"color: #FFFF55\"> 1.16.5</span><span style=\"color: #00AAAA\"><span class=\"minecraft-formatted--obfuscated\"> !</span></span><span style=\"color: #AA00AA\"><span class=\"minecraft-formatted--obfuscated\">!</span></span><span style=\"color: #FFAA00\"><span class=\"minecraft-formatted--obfuscated\">!</span></span><span style=\"color: #55FF55\"><span class=\"minecraft-formatted--obfuscated\">!</span></span>",
+      "beschreibung":"GO_ON Welt <br> INFO: WHITELISTED"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "info5":[
+    {"header":"Wartung des Offlinemodus","content":"Da der Offlinemodus aus unbekannten Gründen nicht so funktioniert, wie er soll, ist diese Funktion bis auf weiteres Deaktiviert. Wir arbeiten allerdings bereits an einer lösung des Problems. Es ist trotzdem weiterhin möglich Luckyapp als Webapp zu installieren."}
+  ],
+  "info4":[
+    {"header":"Wartung der Supportseite","content":"Die Supportseite wird zur Zeit komplett neu Programmiert. Deshalb ist sie momentan noch lange nicht vollständig oder voll funktionsfähig. Beim Besuch der Seite können unerwartet Fehler auftreten."}
+  ],
+  "info3":[
+    {"header":"Änderung am Generator","content":"Am Passwortgenerator wurde die Option hinzugefügt, Pins zu erstellen, welche nur aus Zahlen bestehen."}
+  ],
+  "info2":[
+    {"header":"Musikteil","content":"Der Musikteil wurde vollständig neu Programmiert. Die wichtigsten neuerungen sind das übersichtlichere und responsible Design.<br> Schicken Sie uns gerne auch Ihre Musikwünsche bzw. Radiosenderwünsche."}
+  ],
+  "info1":[
+    {"header":"'Tools' hinzugefügt","content":"Es wurde eine neue Funtion hinzugefügt: TOOLS. <br> Auf dieser Seite befindet sich bereits ein Tool mit dem man Passwörter und Pins zu 100% sicher generieren kann."}
+  ],
+  "info6":[
+    {"header":"Offlinemodus update","content":"Der Offlinemodus ist teilweise wieder verfügbar. Es kann allerdings zu verschiedenen Problemen kommen. <br><font color='red'>Sollten bei Ihnen Probleme auftreten löschen sie die Websitedaten der Luckapp und informieren uns.</font><br><font color='green'>Eine Anleitung finden Sie unter <a href='../support/support.html#offline'>Support</a>"}
+  ],
+  "info7":[
+    {"header":"Lucky-Assistant","content":"Unter Tools gibt es nun den Luckyassistant. <br> Lucky-assistant ist ein Assistenzdiest, der an Alexa, Bixby und Co. angelehnt ist."}
+  ],
+  "info8":[
+    {"header":"Pushnachrichten Hinzugefügt","content":"Wir haben Pushnachrichten hinzugefügt, damit du immer 'up do date' bist. <br> Pushnachrichten können unter Home in der unteren, rechten Ecke aktiviert werden."}
+  ],
+  "info9":[
+    {"header":"Design geändert","content":"Falls es nicht schon eh aufgefallen ist: Das Design der Gesammten Seite wurde geändert. Um genau zu sein, haben wir nur alles eckige Rund gemacht."}
+  ],
+  "info10":[
+    {"header":"Entwicklung","content":"Es wurde die Seite 'Entwicklung' hinzugefügt. <br> Auf dieser Seite kann man sehen, was sich gerade in der Entwicklung befindet und was einen in Zukunft für Funktionen erwarten. <br> Du gelangst über die Fußleiste zu der neuen Seite. Du kannst aber auch <a href='entwicklung/entwicklung.html'>HIER</a> klicken, um auf die Seite zu gelangen."}
+  ],
+  "info11":[
+    {"header":"Bugfixes","content":"In diesem Update wurde ein Bug gefixt. <br> Ein Bug auf der Tools-Seite hat dafür gesorgt, dass der Passwortgenerator nicht richtig funktioniert hat."}
+  ],
+  "info12":[
+    {"header":"Designupdate","content":"Unter Tools wurde das Desin der eingabefelder und Buttons geändert."}
+  ],
+  "info13":[
+    {"header":"Neue Seite: Corona News","content":"Auf der Seite Corona News gibt es Informationen zu den Aktuellen Coronazahlen im HSK und Deutschlandweit."}
+  ],
+  "info14":[
+    {"header":"Minecraft wird hinzugefügt","content":"Da wir die Seite Minecraft hinzufügen, kann es momentan zu beeinträchtigungen kommen."}
+  ],
+  "info15":[
+    {"header":"Wartung bei Fastlink.","content":"Wir Programmieren Fastlink komplett neu, um die Userexperience zu steigern. Deshalb ist Fastlink momentan nur eingeschränkt bzw. garnicht nutzbar. <br> <b>Allerdings können sie noch <a href=''>die alte Fastlink</a> Version nutzen, solange die neue nicht Fertig ist.</b> <br> (Ein Link findet sich auch im Titel von Fastlink.)"}
+  ],
+  "info16":[
+    {"header":"Designoptimierung","content":"Wir haben die Farbe von Links geändert. <br> <div style='background-color:black; color:white;'><!--Beispiel:--> <b>Neu:</b> <a href='#update'>Dies ist ein Beispiellink</a> <b>Alt:</b> <a style='color:-webkit-link' href='#update'>Dies ist ein Beispiellink</a></div> Wie man sieht, sind links durch den stärkeren kontrast nun deutlich besser lesbar."}
+  ],
+  "info17":[
+    {"header":"Fastlink Beta","content":"Auf der Fastlink Seite tut sich was! <br> Das Fastlink Backend ist soweit Fertig Programmiert. <br> In nächster Zeit wird Fastlink dann mit Inhalten gefüllt und das Design vermutlich Optimiert."}
+  ],
+  "info18":[
+    {"header":"Fastlink Performance Update","content":"Im neuesten Fastlinkupdate wurde Fastlink etwas neu angeordnet, kleine Fehler behoben und die Ladeperformance der ersten Seite wurde deutlich verbessert.<br>(Früher gab es sehr kurz, aber sichtbar, eine Leere Seite, bevor die erste Seite geladen wurde. Nun gibt es diese kurze 'Pause' nur noch beim ersten aufrufen von Fastlink."}
+  ],
+  "info19":[
+    {"header":"Luckyapp Update 1|jun21","content":"Es wurden einige kleine Änderungen vorgenommen: <ul><li>Fastlink:<ul><li>Neuer Unterpunkt: Schule > Berufskolleg Meschede ><b> Aktuelles</b> </li><li>Wenn man von einer Unterseite wieder auf die erste Seite zurückkehrt, wird die Navigationsleiste aus dem Weg gescrollt.</li><li>Luckyapp hat nun eine Versionsnummer. Die jetztige ist: 2.1.</li></ul></li><li>Corona News<ul><li>Der Titelname wurde angepasst (Corona --> Corona News)</li><li>Neuer Bereich: Coronaschutzverordnung NRW. Hier kann man sehen, ab welcher Inzidenz was gilt.</li></ul></li></ul>Wenn Sie einen Fehler/Bug gefunden haben, schreiben Sie uns gerne unter <a href='mailto:thebuissnescreeper@gmail.com'>thebuissnescreeper@gmail.com</a>."}
+  ],
+  "info20":[
+    {"header":"Luckyapp Update 1|jul21 : Hangman Update","content":"Es wurden einige kleine Änderungen vorgenommen: <ul><li>Tools:<ul><li>Neues Tool: <b>Hangman Minigame</b>.<br> --> Hier kann man ab sofort eine Runde Hangman spielen.</li><li>Neues Tool: <b>Geodaten</b>.<br>--> Hier kann man sich Informationen über den eigenen Standort anschauen. (Diese Funktion befindet sich noch in der Entwicklung)</li><li>Da es nun immer mehr Tools werden, wurde ein <b>Inhaltsverzeichnis</b> hinzugefügt.</li></ul></li><li>Corona News:<ul><li>Der Bereich Coronaschutzverordnung NRW wurde aktualisiert (Aufgrund von änderungen in der Verordnung).</li></ul></li></ul>Wenn Sie einen Fehler/Bug gefunden haben, schreiben Sie uns gerne unter <a href='mailto:thebuissnescreeper@gmail.com'>thebuissnescreeper@gmail.com</a>."}
+  ],
+  "info21xXx":[
+    {"header":"Update 1|aug21","content":"Rechner: Button = Cursor:Pointer | scrollintoview | neues Design Ergebnisspeicher | Titeldesign | neue Buttons(nur benötigte Buttons werden angezeigt, namen Geändert) |"}
+  ],
+  "info21":[
+    {"header":"Luckyapp Update 1|aug21 : Rechner Update","content":"Es wurden einige kleine Änderungen vorgenommen: <ul><li>Rechner<ul><li>Wenn man mit der <b>Maus</b> über die Buttons geht, wird sie zum Cursor.</li><li>Das <b>Design des Titels</b> wurde an die anderen angepasst.</li><li>Die <b>Buttons</b> für das Anzeigen, Einsetzen und Löschen der letzten Ergebnisse wurden <b>neu designed</b>.</li><li>Wenn man einen Button drückt, wird der Rechner genau <b>ins Sichtfeld gescrollt</b>.</li></ul></li><li>Corona News:<ul><li>Der Bereich Coronaschutzverordnung NRW wurde aktualisiert (Aufgrund von änderungen in der Verordnung).</li></ul></li></ul>Wenn Sie einen Fehler/Bug gefunden haben, schreiben Sie uns gerne unter <a href='mailto:thebuissnescreeper@gmail.com'>thebuissnescreeper@gmail.com</a>."}
+  ],
+  "info":[
+    {"header":"","content":""}
+  ]
+}

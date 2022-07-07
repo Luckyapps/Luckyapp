@@ -1,0 +1,25 @@
+{
+  "info":[
+    {
+      "titel":"Luckyapp Update 1|aug21 : Rechner Update",
+      "datum":"19.08.2021",
+      "typ":"UPDATE",
+      "header":"Luckyapp Update 1|aug21 : Rechner Update",
+      "content":"Es wurden einige kleine Änderungen vorgenommen: <ul><li>Rechner<ul><li>Wenn man mit der <b>Maus</b> über die Buttons geht, wird sie zum Cursor.</li><li>Das <b>Design des Titels</b> wurde an die anderen angepasst.</li><li>Die <b>Buttons</b> für das Anzeigen, Einsetzen und Löschen der letzten Ergebnisse wurden <b>neu designed</b>.</li><li>Wenn man einen Button drückt, wird der Rechner genau <b>ins Sichtfeld gescrollt</b>.</li></ul></li><li>Corona News:<ul><li>Der Bereich Coronaschutzverordnung NRW wurde aktualisiert (Aufgrund von änderungen in der Verordnung).</li></ul></li></ul>"
+    },
+    {
+      "titel":"Luckyapp Update 1|jul21 : Hangman Update",
+      "datum":"19.07.2021",
+      "typ":"UPDATE",
+      "header":"Luckyapp Update 1|jul21 : Hangman Update",
+      "content":"Es wurden einige kleine Änderungen vorgenommen: <ul><li>Tools:<ul><li>Neues Tool: <b>Hangman Minigame</b>.<br> --> Hier kann man ab sofort eine Runde Hangman spielen.</li><li>Neues Tool: <b>Geodaten</b>.<br>--> Hier kann man sich Informationen über den eigenen Standort anschauen. (Diese Funktion befindet sich noch in der Entwicklung)</li><li>Da es nun immer mehr Tools werden, wurde ein <b>Inhaltsverzeichnis</b> hinzugefügt.</li></ul></li><li>Corona News:<ul><li>Der Bereich Coronaschutzverordnung NRW wurde aktualisiert (Aufgrund von änderungen in der Verordnung).</li></ul></li></ul>"
+    },
+    {
+      "titel":"Luckyapp Update 1|jun21",
+      "datum":"19.05.2021",
+      "typ":"UPDATE",
+      "header":"Luckyapp Update 1|jun21",
+      "content":"Es wurden einige kleine Änderungen vorgenommen: <ul><li>Fastlink:<ul><li>Neuer Unterpunkt: Schule > Berufskolleg Meschede ><b> Aktuelles</b> </li><li>Wenn man von einer Unterseite wieder auf die erste Seite zurückkehrt, wird die Navigationsleiste aus dem Weg gescrollt.</li><li>Luckyapp hat nun eine Versionsnummer. Die jetztige ist: 2.1.</li></ul></li><li>Corona News<ul><li>Der Titelname wurde angepasst (Corona --> Corona News)</li><li>Neuer Bereich: Coronaschutzverordnung NRW. Hier kann man sehen, ab welcher Inzidenz was gilt.</li></ul></li></ul>"
+    }
+  ]
+}

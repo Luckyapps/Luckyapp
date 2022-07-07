@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="images/icons/icon-512x512.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png"> <!-- Apple App icon -->
+    <html lang="de-de">
+    <meta name="theme-color" content="black"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Luckyapp ist eine Seite, mit vielen Funktionen, wie einem Rechner, Fastlink, Musik, Luckyassistant, und vielem mehr.">
+    <title>Luckyapp</title>
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+
+  </head>
+  <body onload="load_info()">
+    <script src="old_update.js"></script>
+    <script src="/main/update-list.js"></script>
+
+    <div class="row">
+
+      <div class="left">
+
+        <div class="card">
+          <h1><u>Willkommen im Updatearchiv</u></h1>
+          <a style="cursor:pointer;text-decoration:underline" onclick="lastsite()">Zurück zur vorherigen Seite</a>
+        </div>
+
+        <div class="card">
+          <h2>Alle Updates/Infos ab 28.09.2021</h2>
+          <p>(Auch einige ältere Updates entehalten)</p>
+          <ul id="updatelist" class="li_clickable"></ul>
+        </div>
+
+        <div class="card" id="updateinfo">
+          <h2 id="updates">Alle Updates/Infos bis 24.08.2021</h2>
+          <ul id="updatelist" class="li_clickable">
+            <li onclick="old_info_open(this)" id="info21"><h3><font color="green">UPDATE </font></font>(24.08.2021) <u> Luckyapp Update 1|aug21 : Rechner Update</u></h3></li>
+            <li onclick="old_info_open(this)" id="info20"><h3><font color="green">UPDATE </font></font>(19.07.2021) <u> Luckyapp Update 1|jul21 : Hangman Update</u></h3></li>
+            <li onclick="old_info_open(this)" id="info19"><h3><font color="green">UPDATE </font></font>(09.06.2021) <u> Luckyapp Update 1|jun21</u></h3></li>
+            <li onclick="old_info_open(this)" id="info18"><h3><font color="green">UPDATE </font></font>(19.05.2021) <u> Fastlink Performance Update</u></h3></li>
+            <li onclick="old_info_open(this)" id="info17"><h3><font color="yellow">INFO </font><font color="green">UPDATE </font></font>(07.05.2021) <u> Fastlink Beta</u></h3></li>
+            <li onclick="old_info_open(this)" id="info16"><h3><font color="green">UPDATE </font></font>(04.05.2021) <u> Designoptimierung</u></h3></li>
+            <li onclick="old_info_open(this)" id="info15"><h3><font color="yellow">INFO <font color="red">WARNUNG </font></font>(01.05.2021) <u> Wartung bei Fastlink.</u></h3></li>
+            <li onclick="old_info_open(this)" id="info14"><h3><font color="yellow">INFO <font color="red">WARNUNG </font></font>(22.04.2021) <u> Wir fügen einen neuen Abschnitt hinzu, daher kann es momentan zu problemen kommen.</u></h3></li><!-- -->
+            <li onclick="old_info_open(this)" id="info13"><h3><font color="green">UPDATE </font></font>(19.04.2021) <u> Neue Seite: Corona News</u></h3></li>
+            <li onclick="old_info_open(this)" id="info12"><h3><font color="green">UPDATE </font></font>(27.03.2021) <u> Designoptimierung</u></h3></li>
+            <li onclick="old_info_open(this)" id="info11"><h3><font color="green">UPDATE </font></font>(23.03.2021) <u> Bugfixes</u></h3></li>
+            <li onclick="old_info_open(this)" id="info10"><h3><font color="green">UPDATE </font></font>(17.03.2021) <u> Neue Seite: Entwicklung.</u></h3></li>
+            <li onclick="old_info_open(this)" id="info9"><h3><font color="green">UPDATE </font></font>(10.03.2021) <u> Neues Design</u></h3></li>
+            <li onclick="old_info_open(this)" id="info8"><h3><font color="green">UPDATE <font color="yellow">INFO </font></font>(17.02.2021) <u> Pushnachrichten hinzugefügt.</u></h3></li>
+            <li onclick="old_info_open(this)" id="info7"><h3><font color="green">UPDATE </font>(17.02.2021) <u> Der Lucky-Assistant wurde Hinzugefügt.</u></h3></li>
+            <li onclick="info_open(this)" id="info6"><h3><font color="yellow">INFO <font color="red">WARNUNG </font><font color="green"> Update </font></font>(15.02.2021) <u> Offlinemodus update</u></h3></li>
+            <li onclick="old_info_open(this)" id="info5"><h3><font color="yellow">INFO <font color="red">WARNUNG </font></font>(13.02.2021) <u> Der Offlinemodus wird gewartet und ist deshalb bis auf weiteres nicht verfügbar.</u></h3></li><!---->
+            <li onclick="old_info_open(this)" id="info4"><h3><font color="yellow">INFO </font>(13.02.2021) <u> Die Supportseite wird aktuell gewartet.</u></h3></li>
+            <li onclick="old_info_open(this)" id="info3"><h3><font color="green">UPDATE </font>(13.02.2021) <u> Beim Passwort-generator können nun auch Pins erstellt werden.</u></h3></li>
+            <li onclick="old_info_open(this)" id="info2"><h3><font color="green">UPDATE </font>(10.02.2021) <u> Der Musikteil wurde erneuert.</u></h3></li>
+            <li onclick="old_info_open(this)" id="info1"><h3><font color="green">UPDATE </font>(09.02.2021) <u> Die Seite "Tools" wurde Hinzugefügt.</u></h3></li>
+          </ul>
+        </div>
+        
+      </div>
+
+
+      <div class="right" style="position:sticky">
+
+        <div class="card">
+          <h2>Dein Feedback</h2>
+          <p>Solltest du Fragen oder Anregungen haben, schreibe uns bitte unter <a href="mailto:thebuissnesscreeper@gmail.com">thebuissnesscreeper@gmail.com</a></p>
+        </div>
+
+        <!--<div class="card">
+          <button id="update" onclick="update()">Update</button>
+        </div>-->
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <a href="support/support.html" style="border-right:gray solid 1px; padding-right:1em;">Support</a>
+      <a href="entwicklung/entwicklung.html" style="padding-left:1em;border-right:gray solid 1px; padding-right:1em;">Entwicklung</a>
+      <a href="impressum/impressum.html" style="padding-left:1em;">impressum</a>
+    </div>
+    
+    <div id="info_" onclick="info_close()">
+    <div id="info_container">
+      <h1 id="info_header"></h1>
+      <hr>
+      <p id="info_text"></p>
+    </div>
+    </div>
+
+  </body>
+</html>

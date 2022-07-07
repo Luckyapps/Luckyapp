@@ -1,0 +1,30 @@
+.left{
+  width:100%;
+}
+
+.cinzahlen{
+  border:2px solid gray;
+  padding:1em;
+  background-color: #222;
+  display: inline-block;
+}
+
+.instagram-media{
+  width:100% !important;
+  max-width: none !important;
+  border-radius:1em !important;
+  display: inline-block !important;
+  margin: 1em;
+  vertical-align: top;
+}
+
+@media screen and (min-width: 800px) {
+  .instagram-media {   
+    /*position: relative;
+    left:50%;
+    transform: translate(-50%,0%);*/
+    width: 700px !important;
+    max-width:none !important;
+    /*margin:0 !important;*/
+  }
+}

@@ -1,76 +1,129 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="images/icons/icon-512x512.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png"> <!-- Apple App icon -->
     <html lang="de-de">
-    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png"> <!-- Apple App icon 
-    <link rel="icon" href="media/Ahorn_Logo_Final_RESIZE.png" type="image/png">-->
-    <meta name="theme-color" content="black"/> <!-- Theme color -->
-    <link rel="manifest" href="manifest.json">  <!--Webapp manifest -->
+    <meta name="theme-color" content="black"/>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Put your description here."><!-- Beschreibung der Seite für die Google Suche-->
-    <title>Luckyapp Home</title>  <!-- Tab titel -->
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/header/titlebar.css" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/header/header.css" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/content/content.css" rel="stylesheet" type="text/css" />
+    <meta name="description" content="Luckyapp ist eine Seite, mit vielen Funktionen, wie einem Rechner, Fastlink, Musik, Luckyassistant, und vielem mehr.">
+    <title>Luckyapp</title>
+    <link href="main/style.css" rel="stylesheet" type="text/css" /><!--
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "22d6f03c-8461-4fc1-a2be-37d4622abc82",
+      notifyButton: {
+        enable: true,
+      },
+    });
+  });
+</script>-->
+
+
   </head>
-  <body>
-    <script src="style.js"></script>
-    <script src="stylesheets/header/titlebar.js"></script>
-    <script src="stylesheets/header/header.js"></script>
-    <script src="stylesheets/content/content.js"></script>
+  <body onload="load_Luckyapp_script()">
+    <script src="main/script.js"></script>
+    <script src="sw.js"></script>
+    <script src="main/update-list.js"></script>
 
-    <div id="header">
-      <h1 class="title">Luckyapp</h1>
-      <h2 class="subtitle">Website von Luckyapps</h2>
+    <div class="header">
+      <h1>Luckyapp</h1>
+      <h2>Version2</h2>
     </div>
 
-    <div id="titlebar">
-      <p id="titlebar_title" class="titlebar_title_invisible">Luckyapps > Home</p>
-      <a href="">Home</a>
-      <a href="">Rechner</a>
-      <a href="">Rechner</a>
-      <a href="">Rechner</a>
-      <a href="">Rechner</a>
-      <a href="">Rechner</a>
+    <div class="nav">
+      <a href="index.html" style="background-color:rgba(95, 95, 31, 0.562)">Home</a>
+      <a href="rechner/rechner.html">Rechner</a>
+      <a href="fastlink/fastlink.html">Fastlink</a>
+      <a href="musik/musik2.html">Musik</a>
+      <a href="tools/tools.html">Tools</a>
+      <a href="minecraft/minecraft.html">Minecraft</a>
+      <a class="coronanav" href="corona/corona.html">Corona News</a>
+      <!--<a style="float:right;padding:0; padding-top:1px" href=""><img src="images/settings.png" /></a>-->
     </div>
 
-    <div id="sidecard" class="sidecard_closed_first">
-      <div id="sidecard_close_button">X</div>
-      <div id="sidecard_content">
-        <h1>Luckyapp > Home</h1>
-        <a href="">Rechner</a>
-        <a href="">Rechner</a>
-        <a href="">Rechner</a>
-        <a href="">Rechner</a>
-      </div>
-      
-    </div>
 
-    <div id="content">
-      <div class="area_1">
+    <div class="row">
+
+      <div class="left">
+
         <div class="card">
-          <h2>Projekte</h2>
-          <ul>
-            <li>Nasa</li>
-            <li>Hangman</li>
-            <li>Chat</li>
-            <li>Lucky_UI</li>
-            <li>Console</li>
-            <li>Minecraft Server</li>
-            <li>Rechner</li>
-            <li>Fastlink</li>
-            <li>Lucky_assistant</li>
-            <li>Chrome extensions</li>
-          </ul>
+          <h1><u>Willkommen</u></h1>
+          <!--<p>Die Hauptfeatures der Luckyapp sind der Rechner und Fastlink.</p>
+          <h3 style="color:white; text-decoration:underline; margin-bottom:0em">Das ist Fastlink:</h3>
+          <ul style="list-style-type:none; padding-left:2px; margin-top:0.5em"><li><p style="margin-top:0.5em">- Hier beschreibung einfügen<--</p></li></ul>
+
+          <h3 style="color:white; text-decoration:underline; margin-bottom:0em">Das kann der Rechner:</h3>
+          <ul style="list-style-type:none; padding-left:2px; margin-top:0.5em"><li><p style="margin-top:0.5em">- Hier beschreibung einfügen<--</p></li></ul>-->
         </div>
-      </div>
-      <div class="area_2">
+
         <div class="card">
-          <h3>TITLE</h3>
+          <h2>Projekte des Luckyapp Teams</h2>
+          <p>An diesen Projekten arbeiteten wir zurzeit:</p>
+          <h3 style="color:white; text-decoration:underline; margin-bottom:0em">Carpedia:</h3>
+          <ul style="list-style-type:none; padding-left:2px; margin-top:0.5em"><li><p style="margin-top:0.5em">- Ein Autowiki als App. Link: <a href="https://autopedia.thebuissnescree.repl.co/index.html">https://autopedia.thebuissnescree.repl.co</a></p></li></ul>
+
+          <h3 style="color:white; text-decoration:underline; margin-bottom:0em">Musik:</h3>
+          <ul style="list-style-type:none; padding-left:2px; margin-top:0.5em"><li><p style="margin-top:0.5em">- Mehr oder weniger gute Musik. Link: <a href="https://musik.thebuissnescree.repl.co/index.html">https://musik.thebuissnescree.repl.co</a></p></li></ul>
+
+          <h3 style="color:white; text-decoration:underline; margin-bottom:0em">Wildshausen:</h3>
+          <ul style="list-style-type:none; padding-left:2px; margin-top:0.5em"><li><p style="margin-top:0.5em">- Eine Website über Wildshausen. Link: <a href="https://wildshausen-1.thebuissnescree.repl.co/index.html">https://wildshausen-1.thebuissnescree.repl.co</a></p></li></ul>
+
+          <h3 style="color:white; text-decoration:underline; margin-bottom:0em">Uhr:</h3>
+          <ul style="list-style-type:none; padding-left:2px; margin-top:0.5em"><li><p style="margin-top:0.5em">- Eine sehr einfache Uhr mit Millisekunden angabe. Link: <a href="https://zeit.thebuissnescree.repl.co/index.html">https://zeit.thebuissnescree.repl.co</a></p></li></ul>
         </div>
+
+        <div class="card" id="updateinfo">
+          <h2 id="updates">Infos zu Updates</h2>
+          <p>Sobald sich etwas an dieser Seite ändert wird es hier zu finden sein.</p>
+          <ul id="updatelist" class="li_clickable"></ul>
+          <a href="main/old_update/old_update.html">Archiv</a>
+        </div>
+        
       </div>
+
+
+      <div class="right">
+
+        <div class="card">
+          <h2>Offline Nutzung</h2>
+          <font color="orange">Aktuell noch in der Testphase. <br></font>
+          <p>Weitere Infos gibt es im <a href="#updateinfo" style="color:green">Updatebereich</a>.</p>
+          <!--<p>Die Luckyapp ist auch offline nutzbar.<br>Dazu müssen nur die automatischen Downloads in den Browsereinstellungen gestattet werden.</p>-->
+        </div>
+
+        <div class="card">
+          <h2>Dein Feedback</h2>
+          <p>Solltest du Fragen oder Anregungen haben, schreibe uns bitte unter <a href="mailto:thebuissnesscreeper@gmail.com">thebuissnesscreeper@gmail.com</a></p>
+        </div>
+
+        <!--<div class="card">
+          <button id="update" onclick="update()">Update</button>
+        </div>-->
+      </div>
+
     </div>
+
+    <div class="footer">
+      <a href="support/support.html" style="border-right:gray solid 1px; padding-right:1em;">Support</a>
+      <a href="entwicklung/entwicklung.html" style="padding-left:1em;border-right:gray solid 1px; padding-right:1em;">Entwicklung</a>
+      <a href="impressum/impressum.html" style="padding-left:1em;">impressum</a>
+    </div>
+
+    <div id="update_banner" onclick="update_banner_open_info()"><div id="update_banner_close">X</div><h1 id="update_banner_header"></h1><p id="update_banner_text"></p></div>
+    
+    <div id="info_" onclick="info_close()">
+    <div id="info_container">
+      <h1 id="info_header">test</h1>
+      <hr>
+      <p id="info_text"></p>
+    </div>
+    </div>
+
   </body>
 </html>
