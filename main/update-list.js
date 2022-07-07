@@ -2,7 +2,7 @@ var data, list, typ_farbe = "", banner, banner_header, banner_text, update_numme
 
 function load_info(){
   list = document.getElementById("updatelist");
-  var requestURL = "/main/update.json";
+  var requestURL = "main/update.json";
   var request = new XMLHttpRequest();
   request.open('GET', requestURL);
   request.responseType = 'json';
