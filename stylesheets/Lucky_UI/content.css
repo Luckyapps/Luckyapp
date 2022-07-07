@@ -1,0 +1,41 @@
+#content{
+    display:grid;
+    grid-template-columns: auto auto auto auto; /*Anzahl und Breite der Spalten*/
+    margin-top:30px; /*Zusätzlicher Abstand zur titlebar (wird auf den Wert der grid-gap draufgerechnet)*/
+    grid-gap: 1em; /*Abstand zwischen Elementen (wird auch als padding gesetzt*/
+    justify-content: center;
+}
+
+.card{
+    /*background-color: #ffffff47;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);*/
+    background-color: #ffffffde;
+    border: 2px solid lightgray;
+    border-radius:1em;
+    padding:1em;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+/* Benutzerdef. Cardbreiten (Müssen bei änderungen der Spaltenanzahl angepasst werden)*/
+
+.card_100{ /*eigener Name: .card_[name]*/
+    grid-column: 1 / span4; /*Werte: [von] / span[bis einschließlich]*/
+}
+
+@media screen and (max-width: 650px) { /*Wenn die Displaybreite kleiner als 650px*/
+    #content{
+        grid-template-columns: 100% !important;
+    }
+    .card_100{
+        grid-column: unset;
+    }
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .card {
+        background-color: #ffffff47;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+  }

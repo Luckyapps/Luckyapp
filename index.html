@@ -9,68 +9,160 @@
     <link rel="manifest" href="manifest.json">  <!--Webapp manifest -->
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Put your description here."><!-- Beschreibung der Seite für die Google Suche-->
-    <title>Luckyapp Home</title>  <!-- Tab titel -->
+    <title>Lucky UI</title>  <!-- Tab titel -->
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/header/titlebar.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/Lucky_UI/version_history.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/Lucky_UI/titlebar.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/Lucky_UI/content.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/Lucky_UI/error.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/Lucky_UI/sidecard.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/Lucky_UI/cookies.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/Lucky_UI/darkmode.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/Lucky_UI/update_notification/update_notification.css" rel="stylesheet" type="text/css" />
+
     <link href="stylesheets/header/header.css" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/content/content.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/sections/sections.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <script src="style.js"></script>
-    <script src="stylesheets/header/titlebar.js"></script>
+    <script src="stylesheets/scroll/scroll.js"></script>
     <script src="stylesheets/header/header.js"></script>
-    <script src="stylesheets/content/content.js"></script>
+    <script src="stylesheets/sections/sections.js"></script>
 
-    <div id="header">
-      <h1 class="title">Luckyapp</h1>
-      <h2 class="subtitle">Website von Luckyapps</h2>
-    </div>
-
-    <div id="titlebar">
-      <p id="titlebar_title" class="titlebar_title_invisible">Luckyapps > Home</p>
-      <a href="">Home</a>
-      <a href="">Rechner</a>
-      <a href="">Rechner</a>
-      <a href="">Rechner</a>
-      <a href="">Rechner</a>
-      <a href="">Rechner</a>
-    </div>
-
-    <div id="sidecard" class="sidecard_closed_first">
-      <div id="sidecard_close_button">X</div>
-      <div id="sidecard_content">
-        <h1>Luckyapp > Home</h1>
-        <a href="">Rechner</a>
-        <a href="">Rechner</a>
-        <a href="">Rechner</a>
-        <a href="">Rechner</a>
+    <section class="title_sec">
+      <!--<video autoplay muted loop id="myVideo">
+        <source src="media/nasa3.mp4" type="video/mp4">
+      </video>-->
+      <div class="title_container">
+        <div class="title">
+          <img src="media/logo.png"></img>
+          Luckyapps
+        </div>
       </div>
-      
-    </div>
+      <div class="scroll_indicator" onclick="document.getElementById('test1').scrollIntoView({behavior:'smooth'})">\/</div>
+    </section>
 
-    <div id="content">
-      <div class="area_1">
-        <div class="card">
-          <h2>Projekte</h2>
+    <section class="section" id="test1"><div id="sec1"><h2>Ein Abschnitt</h2><p>In diesem Abschnitt gibt es einen Testtext.</p></div></section>
+
+    <section class="section"><video id="video" autoplay muted loop controls><source src="media/nasa3.mp4" type="video/mp4"></video></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<div id="plz" style="position:absolute; height:70%; color:transparent">test</div>-->
+
+    <!--Lucky_UI-->
+    <script src="stylesheets/Lucky_UI/version_history.js"></script>
+    <script src="stylesheets/Lucky_UI/titlebar.js"></script>
+    <script src="stylesheets/Lucky_UI/content.js"></script>
+    <script src="stylesheets/Lucky_UI/error.js"></script>
+    <script src="stylesheets/Lucky_UI/sidecard.js"></script>
+    <script src="stylesheets/Lucky_UI/cookies.js"></script>
+    <script src="stylesheets/Lucky_UI/darkmode.js"></script>
+    <script src="stylesheets/Lucky_UI/update_notification/update_notification.js"></script>
+    <script src="stylesheets/Lucky_UI/update_notification/updatelist.js"></script>
+
+    <div id="blende"></div><!--Blende-->
+    
+    <!--Error-->
+    <div class="error_style_container"><div id="error_container" class="error_hidden"></div></div>
+
+    <!--Version_History and Watermark-->
+    <div title="Versionsinformation" id="watermark">App by <a href="">Luckyapps</a> | dvc.1.22071.0</div>
+    <div id="version_history_grid_container">
+      <div id="version_history_container" class="version_history_closed_FIRST">
+        <h2>Versionen:</h2>
+        <div>
+          <h3>dvc.1.22071.0</h3>
           <ul>
-            <li>Nasa</li>
-            <li>Hangman</li>
-            <li>Chat</li>
-            <li>Lucky_UI</li>
-            <li>Console</li>
-            <li>Minecraft Server</li>
-            <li>Rechner</li>
-            <li>Fastlink</li>
-            <li>Lucky_assistant</li>
-            <li>Chrome extensions</li>
+            <li>Das Projekt wurde erstellt.</li>
           </ul>
         </div>
-      </div>
-      <div class="area_2">
-        <div class="card">
-          <h3>TITLE</h3>
+        <div id="version_history_toolbar">
+          <div style="cursor:help" id="version_history_info_open">?</div>
+          <div id="version_history_close">X</div>
         </div>
       </div>
     </div>
+
+    <!--Kompatibilitätsmodus-->
+    <div id="compatibility_mode">Kompatibilitätsmodus</div>
+
+    <!--Update_Notifications-->
+    <div id="update_notification" class="u_n_first_closed">
+      <div id="update_notification_container">
+        <div id="update_notification_toolbar">
+          <div id="update_notification_title">TITEL</div>
+          <div id="update_notification_close">X</div>
+        </div>
+        <div id="update_notification_content">
+        </div>
+      </div>
+    </div>
+
+    <!--cookies-->
+    <div class="cookie_container_hide" id="cookie_container">
+      <div  id="cookie_content">
+        <h3>Cookies</h3>
+        <div>Bei Nutzung der Website stimmen Sie zu, dass die Website notwendige technische Nutzerdaten (z.B. Darkmode-Einstellungen, Cookieauswahl) lokal im Browser speichert.</div>
+        <div id="cookie_selection">
+          <div id="cookies_close" onclick="cookie_content_close()">Fortfahren</div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+
+    <!--Version_history_info_content-->
+    <div id="vers-hist-info-cont" style="display: none;">
+      <h2>Versionsinformation</h2>
+      <pre>---------------AHORN----------------
+        ------------------------------------
+        Versionsnummern:
+        
+        VN.X.Y.Z
+        
+        Versionsnamen(VN):
+        
+        v: stable version
+        bv: beta version
+        av: alpha version
+        dv: development version
+        dvc: development verison current (under construction, no further information available)
+        
+        Hauptversionsnummer(X):
+        
+        Große Funktions/Designänderungen (z.B.: neues UI, neuer Aufbau)
+        
+        Buildnummern(Y):
+        ->Aufbau: JahrMonatNummer (z.B.: 22011)
+        
+        kleinere Änderungen in der Hauptversion (z.B.: kleine Designänderungen, verbesserungen im Code)
+        
+        Fixnummer(Z):
+        
+        Fixes von kleinen Bugs und Fehlerbehebungen
+        
+        
+        ------------------------------------
+        --------------Versionen-------------
+        ------------------------------------
+        bv.1.22024.2:
+        --> 
+        ------------------------------------
+        bv.1.22022.1:
+        --> Versionsnummern und Erläuterungen hinzugefügt.
+        ------------------------------------
+        </pre>
+    </div>
+
   </body>
 </html>

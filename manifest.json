@@ -1,6 +1,6 @@
 {
-    "name": "Luckyapp",
-    "short_name": "Luckyapp",
+    "name": "Appname",
+    "short_name": "Appname",
     "theme_color": "black",
     "background_color": "black",
     "display": "standalone",

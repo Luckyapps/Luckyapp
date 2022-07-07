@@ -1,0 +1,73 @@
+#titlebar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    /*background-color:#0000008c; /*#00000042;*/
+    /*backdrop-filter: blur(12px); /*12px standard*/
+    /*-webkit-backdrop-filter: blur(12px); /*12px standard*/
+    background-color: #000000f2;
+    border-bottom: 1px solid black;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 2px 20px 0 rgb(0 0 0 / 19%);
+    height: 44px;
+    font-size: 17px;
+    z-index: 900;
+}
+  
+#titlebar img{
+    margin:0;
+    max-height: 34px;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+#titlebar a{
+    padding: 0 1em 0 1em  ;
+    margin:0;
+    text-decoration: none;
+    color: white;
+}
+
+#titlebar a:hover{
+    text-decoration:underline;
+}
+
+#settings{
+    position:fixed;
+    top:0;
+    right:0;
+    z-index:901;
+    height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+#settings img{
+    display: inline-block;
+    max-height: 17px;
+    padding: 0 0.5em 0 0.5em;
+    cursor:pointer;
+}
+
+@media screen and (max-width: 650px) {
+    #titlebar{
+        /*flex-direction: column;*/
+    }
+    #titlebar a{
+        display: none;
+    }
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    #titlebar {
+        background-color:#0000008c; /*#00000042;*/
+        backdrop-filter: blur(12px); /*12px standard*/
+        -webkit-backdrop-filter: blur(12px); /*12px standard*/
+    }
+  }
