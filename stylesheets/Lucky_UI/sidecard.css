@@ -1,0 +1,94 @@
+/*SIDECARD*/
+
+.sidecard{
+    /*background-color: #00000042;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(12px);*/
+    background-color: #000000f5;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: none;
+    z-index: 902;
+    text-align: center;
+}
+
+.sidecard_open{
+    left:0;
+    display: block;
+    animation-name: sidecard_open;
+    animation-duration: 0.5s;
+}
+
+.sidecard_close{
+    left:-100%;
+    display:block;
+    animation-name: sidecard_close;
+    animation-duration: 0.5s;
+}
+
+@keyframes sidecard_open{
+    from{left:-100%}
+    to{left:0}
+}
+
+@keyframes sidecard_close{
+    from{left:0}
+    to{left:-100%}
+}
+
+.sidecard_but{
+    display: none;
+    position: fixed;
+    left: 13.5px;
+    top: 13.5px;
+    margin:0;
+    max-width: 17px;
+    z-index:901;
+}
+
+.sidecard_but_close{
+    position:absolute;
+    right:10px;
+    top:10px;
+    cursor:pointer;
+    font-size:2.5em;
+    color:red;
+    font-weight: bold;
+}
+
+.sidecard a{
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom:22px;
+    font-size:17px;
+    display:block;
+    color: white;
+}
+
+.sidecard a:hover{
+    text-decoration:underline;
+}
+
+.sidecard img{
+    max-height: 34px;
+    margin-top: 1em;
+    margin-bottom: 22px;
+}
+
+@media screen and (max-width: 650px) {
+    .sidecard_but{
+        display: block;
+        cursor:pointer;
+    }
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .sidecard {
+        background-color: #00000042;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+  }
