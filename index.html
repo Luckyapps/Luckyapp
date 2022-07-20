@@ -9,108 +9,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Luckyapp ist eine Seite, mit vielen Funktionen, wie einem Rechner, Fastlink, Musik, Luckyassistant, und vielem mehr.">
-    <title>Luckyapp</title>
-    <link href="main/style.css" rel="stylesheet" type="text/css" />
-
+    <title>Luckyapp5</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
-  <body onload="load_Luckyapp_script()">
-    <script src="main/script.js"></script>
-    <script src="sw.js"></script>
-    <script src="main/update-list.js"></script>
+  <body>
+    <script>
+        var page_config_init = {
+            modules:{
+                header: {
+                    active: true,
+                    title: "Luckyapp5",
+                    subtitle: "redesign"
+                },
+                navbar: {
+                    active: true,
+                    links: [
+                        {
+                            text: "Home",
+                            href: "#",
+                            active: true
+                        },
+                        {
+                            text: "Weiter"
+                        }
+                    ]
+                },
+                preset: {
+                    active: true,
+                    type: "grid"
+                }
+            },
+            appearance: {
+                font_style: "calibri",
+                theme: "light"
+            }
+        }
+    </script>
+    <script src="luckyapp_core.js"></script>
 
-    <div class="header">
-      <h1>Luckyapp</h1>
-      <h2>Version2</h2>
-    </div>
+    <div id="wall"><div id="ball_container"><div id="ball"></div><div id="bar_container"><div id="bar"></div></div></div></div>
 
-    <div class="nav">
-      <a href="index.html" style="background-color:rgba(95, 95, 31, 0.562)">Home</a>
-      <a href="rechner/rechner.html">Rechner</a>
-      <a href="fastlink/fastlink.html">Fastlink</a>
-      <a href="musik/musik2.html">Musik</a>
-      <a href="tools/tools.html">Tools</a>
-      <a href="minecraft/minecraft.html">Minecraft</a>
-      <a class="coronanav" href="corona/corona.html">Corona News</a>
-      <!--<a style="float:right;padding:0; padding-top:1px" href=""><img src="images/settings.png" /></a>-->
-    </div>
-
-
-    <div class="grid_container">
-
-      <div class="left">
-
-        <div class="card">
-          <h1><u>Willkommen</u></h1>
-          <!--<p>Die Hauptfeatures der Luckyapp sind der Rechner und Fastlink.</p>
-          <h3 style="color:white; text-decoration:underline; margin-bottom:0em">Das ist Fastlink:</h3>
-          <ul style="list-style-type:none; padding-left:2px; margin-top:0.5em"><li><p style="margin-top:0.5em">- Hier beschreibung einfügen<--</p></li></ul>
-
-          <h3 style="color:white; text-decoration:underline; margin-bottom:0em">Das kann der Rechner:</h3>
-          <ul style="list-style-type:none; padding-left:2px; margin-top:0.5em"><li><p style="margin-top:0.5em">- Hier beschreibung einfügen<--</p></li></ul>-->
+    <!--<div class="page">
+        <div class="header">
+            <div class="header_title"></div>
+            <div class="header_navbar"></div>
         </div>
-
-        <div class="card">
-          <h2>Projekte des Luckyapp Teams</h2>
-          <p>An diesen Projekten arbeiteten wir zurzeit:</p>
-          <h3 style="color:white; text-decoration:underline; margin-bottom:0em">Carpedia:</h3>
-          <ul style="list-style-type:none; padding-left:2px; margin-top:0.5em"><li><p style="margin-top:0.5em">- Ein Autowiki als App. Link: <a href="https://autopedia.thebuissnescree.repl.co/index.html">https://autopedia.thebuissnescree.repl.co</a></p></li></ul>
-
-          <h3 style="color:white; text-decoration:underline; margin-bottom:0em">Musik:</h3>
-          <ul style="list-style-type:none; padding-left:2px; margin-top:0.5em"><li><p style="margin-top:0.5em">- Mehr oder weniger gute Musik. Link: <a href="https://musik.thebuissnescree.repl.co/index.html">https://musik.thebuissnescree.repl.co</a></p></li></ul>
-
-          <h3 style="color:white; text-decoration:underline; margin-bottom:0em">Wildshausen:</h3>
-          <ul style="list-style-type:none; padding-left:2px; margin-top:0.5em"><li><p style="margin-top:0.5em">- Eine Website über Wildshausen. Link: <a href="https://wildshausen-1.thebuissnescree.repl.co/index.html">https://wildshausen-1.thebuissnescree.repl.co</a></p></li></ul>
-
-          <h3 style="color:white; text-decoration:underline; margin-bottom:0em">Uhr:</h3>
-          <ul style="list-style-type:none; padding-left:2px; margin-top:0.5em"><li><p style="margin-top:0.5em">- Eine sehr einfache Uhr mit Millisekunden angabe. Link: <a href="https://zeit.thebuissnescree.repl.co/index.html">https://zeit.thebuissnescree.repl.co</a></p></li></ul>
-        </div>
-
-        <div class="card" id="updateinfo">
-          <h2 id="updates">Infos zu Updates</h2>
-          <p>Sobald sich etwas an dieser Seite ändert wird es hier zu finden sein.</p>
-          <ul id="updatelist" class="li_clickable"></ul>
-          <a href="main/old_update/old_update.html">Archiv</a>
-        </div>
-        
-      </div>
-
-
-      <div class="right">
-
-        <div class="card">
-          <h2>Offline Nutzung</h2>
-          <font color="orange">Aktuell noch in der Testphase. <br></font>
-          <p>Weitere Infos gibt es im <a href="#updateinfo" style="color:green">Updatebereich</a>.</p>
-          <!--<p>Die Luckyapp ist auch offline nutzbar.<br>Dazu müssen nur die automatischen Downloads in den Browsereinstellungen gestattet werden.</p>-->
-        </div>
-
-        <div class="card">
-          <h2>Dein Feedback</h2>
-          <p>Solltest du Fragen oder Anregungen haben, schreibe uns bitte unter <a href="mailto:thebuissnesscreeper@gmail.com">thebuissnesscreeper@gmail.com</a></p>
-        </div>
-
-        <!--<div class="card">
-          <button id="update" onclick="update()">Update</button>
-        </div>-->
-      </div>
-
-    </div>
-
-    <div class="footer">
-      <a href="support/support.html" style="border-right:gray solid 1px; padding-right:1em;">Support</a>
-      <a href="entwicklung/entwicklung.html" style="padding-left:1em;border-right:gray solid 1px; padding-right:1em;">Entwicklung</a>
-      <a href="impressum/impressum.html" style="padding-left:1em;">impressum</a>
-    </div>
-
-    <div id="update_banner" onclick="update_banner_open_info()"><div id="update_banner_close">X</div><h1 id="update_banner_header"></h1><p id="update_banner_text"></p></div>
-    
-    <div id="info_" onclick="info_close()">
-    <div id="info_container">
-      <h1 id="info_header">test</h1>
-      <hr>
-      <p id="info_text"></p>
-    </div>
-    </div>
-
+    </div>-->
   </body>
 </html>

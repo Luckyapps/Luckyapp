@@ -1,0 +1,13 @@
+*{
+    font-family: calibri;
+}
+
+.page{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.grid_100{
+    grid-column: 1 / span3;
+}
+

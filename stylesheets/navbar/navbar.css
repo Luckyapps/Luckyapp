@@ -1,0 +1,15 @@
+.header_navbar{
+    background-color: yellow;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+}
+
+.header_navbar a{
+    padding: 1em;
+}
+
+.header_navbar :hover{
+    background-color: orange;
+}
