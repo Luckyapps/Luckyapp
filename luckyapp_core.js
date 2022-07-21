@@ -34,12 +34,34 @@ var luckyapp_core = {
             start: async function(){
                 if(luckyapp_core.page_config.modules.preset.type == "grid"){
                     await start_grid_stylesheet();
-                    await cssLoader_(luckyapp_core.modules.preset.files.css_[0]);
+                    await cssLoader_(luckyapp_core.page_config.source + luckyapp_core.modules.preset.files.css_[0]);
                     luckyapp_core.load_check();
                 }else{
                     console.error("No preset");
-                    luckyapp_core.load_check();
+                    luckyapp_core.load_error("Es ist kein Preset-type unter luckyapp_core.page_config.modules.preset.type angegeben.");
                 }
+            }
+        },
+        content: {
+            active: page_config_init.modules.content.active,
+            files: {
+                js_main: "stylesheets/content/content.js",
+                css: ["stylesheets/content/content.css"]
+            },
+            start: async function(){
+                await start_content_stylesheet();
+                luckyapp_core.load_check();
+            }
+        },
+        footer: {
+            active: page_config_init.modules.footer.active,
+            files: {
+                js_main: "stylesheets/footer/footer.js",
+                css: ["stylesheets/footer/footer.css"]
+            },
+            start: async function(){
+                await start_footer_stylesheet();
+                luckyapp_core.load_check();
             }
         }
     },
@@ -59,6 +81,10 @@ var luckyapp_core = {
                 console.warn("Fertig geladen");
             }
         }
+    },
+    load_error: function(message){
+        document.getElementById("ball_container").innerHTML += "<p style='color:red; font-family: calibri; text-align:center'>Ein Fehler ist aufgetreten: "+ message +"</p>"
+        +"<p style='font-family: calibri; color:white; text-align:center'>Sie können das Laden der Seite erzwingen (die Seite ist dann unvollständig geladen) </p><button style='cursor:pointer' onclick='luckyapp_core.load_check(); console.warn(`Die Seite wird zwangsweise angezeigt`)'>Hier drücken, um die Seite zwangsweise zu laden.</button>";
     }
 }
 
@@ -67,23 +93,70 @@ window.addEventListener("load", load_luckyapp_core);
 var loaded_modules_count = 0, load_status = 0;
 
 function load_luckyapp_core(){
+    load_meta();
+    if(!luckyapp_core.page_config.modules.preset.active){
+        loaded_modules_count++;
+        luckyapp_core.load_error("Das Preset Modul unter luckyapp_core.page_config.modules.preset ist deaktiviert");
+    }
     luckyapp_core.modules.keylist = Object.keys(luckyapp_core.modules);
     for(i=0;i<luckyapp_core.modules.keylist.length;i++){
         if(luckyapp_core.modules[luckyapp_core.modules.keylist[i]].active){ //Wenn modul aktiv
             if(luckyapp_core.modules[luckyapp_core.modules.keylist[i]].files.js_main){
                 loaded_modules_count++;
-                scriptLoader(luckyapp_core.modules[luckyapp_core.modules.keylist[i]].files.js_main, luckyapp_core.modules[luckyapp_core.modules.keylist[i]].start);
+                scriptLoader(luckyapp_core.page_config.source + luckyapp_core.modules[luckyapp_core.modules.keylist[i]].files.js_main, luckyapp_core.modules[luckyapp_core.modules.keylist[i]].start);
             }
             if(luckyapp_core.modules[luckyapp_core.modules.keylist[i]].files.js){ //Wenn js
                 loaded_modules_count++;
-                luckyapp_core.modules[luckyapp_core.modules.keylist[i]].files.js.forEach(function(src){scriptLoader(src, luckyapp_core.load_check)});
+                luckyapp_core.modules[luckyapp_core.modules.keylist[i]].files.js.forEach(function(src){scriptLoader(luckyapp_core.page_config.source + src, luckyapp_core.load_check)});
             }
             if(luckyapp_core.modules[luckyapp_core.modules.keylist[i]].files.css){ //Wenn css
                 loaded_modules_count++;
-                luckyapp_core.modules[luckyapp_core.modules.keylist[i]].files.css.forEach(function(src){cssLoader_(src, luckyapp_core.load_check)});
+                luckyapp_core.modules[luckyapp_core.modules.keylist[i]].files.css.forEach(function(src){cssLoader_(luckyapp_core.page_config.source + src, luckyapp_core.load_check)});
             }
         }
     }
+}
+
+function load_meta(){
+    if(luckyapp_core.page_config.modules.meta.active){
+        loaded_modules_count++;
+        if(luckyapp_core.page_config.modules.meta.html_embed){
+            document.getElementsByTagName("head")[0].innerHTML = ""
+                +'<link rel="icon" href="'+ get_link(luckyapp_core.page_config.modules.meta.icon.href) +'" type="'+ luckyapp_core.page_config.modules.meta.icon.type +'">'
+                +'<link rel="apple-touch-icon" href="'+ get_link(luckyapp_core.page_config.modules.meta.apple_icon) +'">'
+                +'<meta name="theme-color" content="'+ luckyapp_core.page_config.modules.meta.theme_color +'">'
+                +'<meta charset="'+ luckyapp_core.page_config.modules.meta.charset +'">'
+                +'<meta name="viewport" content="'+ luckyapp_core.page_config.modules.meta.viewport +'">'
+                +'<title>'+ luckyapp_core.page_config.modules.meta.title +'</title>'
+                +'<link href="'+ get_link("style.css") +'" rel="stylesheet" type="text/css" />';
+        }else{
+            var meta_links = document.getElementsByTagName("link");
+            var meta_metas = document.getElementsByTagName("meta");
+            document.getElementsByTagName("title")[0].innerHTML = luckyapp_core.page_config.modules.meta.title;
+
+            for(i=0;i<meta_links.length;i++){
+                if(meta_links[i].rel == "icon"){
+                    meta_links[i].href = get_link(luckyapp_core.page_config.modules.meta.icon.href);
+                    meta_links[i].type = luckyapp_core.page_config.modules.meta.icon.type;
+                }else if(meta_links[i].rel == "apple-touch-icon"){
+                    meta_links[i].href = get_link(luckyapp_core.page_config.modules.meta.apple_icon);
+                }else if(meta_metas[i]){
+                    if(meta_metas[i].name  == "description"){
+                        meta_metas[i].content = luckyapp_core.page_config.modules.meta.description;
+                    }else if(meta_metas[i].name  == "theme-color"){
+                        meta_metas[i].content = luckyapp_core.page_config.modules.meta.theme_color;
+                    }else if(meta_metas[i].name  == "viewport"){
+                        meta_metas[i].content = luckyapp_core.page_config.modules.meta.viewport;
+                    }
+                }
+            } 
+        }
+        luckyapp_core.load_check();
+    }
+}
+
+function get_link(absolute_link){
+    return luckyapp_core.page_config.source + absolute_link;
 }
 
 

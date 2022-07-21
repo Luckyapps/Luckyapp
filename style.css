@@ -1,5 +1,21 @@
+*{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 html{
   background-color: black;
+}
+
+h1, h2{
+  text-decoration: underline;
+}
+
+a{
+  color: #00adad;
+}
+
+a:hover{
+  color: #00ffff !important
 }
 
 #wall{
