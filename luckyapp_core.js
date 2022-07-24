@@ -15,6 +15,18 @@ var luckyapp_core = {
         },
         navbar: {
             active: page_config_init.modules.navbar.active,
+            links: [
+                {
+                    text: "Home",
+                    href: "index.html"
+                },{
+                    text: "Fastlink",
+                    href: "pages/fastlink/index.html"
+                },{
+                    text: "Test",
+                    href: "pages/test/index.html"
+                }
+            ],
             files: {
                 js_main: "stylesheets/navbar/navbar.js",
                 css: ["stylesheets/navbar/navbar.css"]
@@ -38,7 +50,7 @@ var luckyapp_core = {
                     luckyapp_core.load_check();
                 }else{
                     console.error("No preset");
-                    luckyapp_core.load_error("Es ist kein Preset-type unter luckyapp_core.page_config.modules.preset.type angegeben.");
+                    luckyapp_core.load_error(undefined, "Es ist kein Preset-type unter luckyapp_core.page_config.modules.preset.type angegeben.");
                 }
             }
         },
@@ -63,13 +75,25 @@ var luckyapp_core = {
                 await start_footer_stylesheet();
                 luckyapp_core.load_check();
             }
+        },
+        version_history: {
+            active: true,
+            files: {
+                js_main: "stylesheets/version_history/version_history.js",
+                css: ["stylesheets/version_history/version_history.css"]
+            },
+            start: async function(){
+                await load_version_history_stylesheet();
+                luckyapp_core.load_check();
+            }
         }
     },
     page_config: page_config_init,
-    load_check: async function(){
+    load_check: async function(source){
         load_status++;
         /*console.log("Modules to load: "+ loaded_modules_count);
-        console.log("Modules loaded: "+ load_status);*/
+        console.log("Modules loaded: "+ load_status);
+        console.log(load_status +"/"+ loaded_modules_count +" Module geladen");*/
         document.getElementById("bar").style.width = (100/loaded_modules_count ) * load_status +"%";
         await sleep(parseFloat(window.getComputedStyle(document.getElementById("bar")).getPropertyValue("transition-Duration"))*1000);
         if(load_status == (loaded_modules_count)){
@@ -82,13 +106,21 @@ var luckyapp_core = {
             }
         }
     },
-    load_error: function(message){
-        document.getElementById("ball_container").innerHTML += "<p style='color:red; font-family: calibri; text-align:center'>Ein Fehler ist aufgetreten: "+ message +"</p>"
-        +"<p style='font-family: calibri; color:white; text-align:center'>Sie können das Laden der Seite erzwingen (die Seite ist dann unvollständig geladen) </p><button style='cursor:pointer' onclick='luckyapp_core.load_check(); console.warn(`Die Seite wird zwangsweise angezeigt`)'>Hier drücken, um die Seite zwangsweise zu laden.</button>";
+    load_error: function(event, message){
+        if(event != undefined){
+            console.log(event);
+            document.getElementById("ball_container").innerHTML += "<p style='color:red; font-family: calibri; text-align:center'>Ein Fehler ist aufgetreten</p>"
+            +"<p style='font-family: calibri; color:white; text-align:center'>Sie können das Laden der Seite erzwingen (die Seite ist dann unvollständig geladen) </p><button style='cursor:pointer' onclick='luckyapp_core.load_check(); console.warn(`Die Seite wird zwangsweise angezeigt`)'>Hier drücken, um die Seite zwangsweise zu laden.</button>";
+        }else{
+            document.getElementById("ball_container").innerHTML += "<p style='color:red; font-family: calibri; text-align:center'>Ein Fehler ist aufgetreten: "+ message +"</p>"
+            +"<p style='font-family: calibri; color:white; text-align:center'>Sie können das Laden der Seite erzwingen (die Seite ist dann unvollständig geladen) </p><button style='cursor:pointer' onclick='luckyapp_core.load_check(); console.warn(`Die Seite wird zwangsweise angezeigt`)'>Hier drücken, um die Seite zwangsweise zu laden.</button>";
+        }
     }
 }
 
 window.addEventListener("load", load_luckyapp_core);
+
+window.addEventListener("error", luckyapp_core.load_error);
 
 var loaded_modules_count = 0, load_status = 0;
 
@@ -213,7 +245,6 @@ function cssLoader_(file, callback){ //Ein CSS stylesheet einbetten
         }
     }
 }
-
 
 
 async function scriptLoader_(path, callback){ //Ein JS script einbetten
