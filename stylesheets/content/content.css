@@ -10,6 +10,7 @@
     padding: 20px;
     border: 2px solid yellow;
     border-radius: 10px;
+    backdrop-filter: blur(12px);
 }
 
 .cont_grid{

@@ -125,6 +125,7 @@ window.addEventListener("error", luckyapp_core.load_error);
 var loaded_modules_count = 0, load_status = 0;
 
 function load_luckyapp_core(){
+    document.getElementById("page_config_script").remove();
     load_meta();
     if(!luckyapp_core.page_config.modules.preset.active){
         loaded_modules_count++;
