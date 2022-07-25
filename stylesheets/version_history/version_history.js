@@ -1,19 +1,20 @@
 var watermark,body, version_history_container,version_history_grid_container, version_history_close_button, version_history_info_button, version_history_innerHTML, flyin, version_history_info_content;
 
 async function load_version_history_stylesheet(){
-
-    var html_content = '<div><!--Version_History and Watermark--><div title="Versionsinformation" id="watermark">App by <a href="">Luckyapps</a> | dvc.1.22071.1</div><div id="version_history_grid_container"><div id="version_history_container" class="version_history_closed_FIRST"><h2>Versionen:</h2><div id="version_history_toolbar"><div style="cursor:help" id="version_history_info_open">?</div><div id="version_history_close">X</div></div></div></div></div>'
+  if(luckyapp_core.modules.updates.loaded){
+    var html_content = '<div><!--Version_History and Watermark--><div title="Versionsinformation" id="watermark">App by <a href="">Luckyapps</a></div><div id="version_history_grid_container"><div id="version_history_container" class="version_history_closed_FIRST"><h2>Versionen:</h2><div id="version_history_toolbar"><div style="cursor:help" id="version_history_info_open">?</div><div id="version_history_close">X</div></div></div></div></div>'
     html_content = await createHTML(html_content);
-    document.body.appendChild(html_content);
+    await document.body.appendChild(html_content);
 
     watermark = document.getElementById("watermark");
+    if(luckyapp_core.page_config.modules.version_history.watermark == false){
+      watermark.classList.add("invisible");
+    }
     version_history_close_button = document.getElementById("version_history_close");
     version_history_container = document.getElementById("version_history_container");
     version_history_grid_container = document.getElementById("version_history_grid_container");
     version_history_info_button = document.getElementById("version_history_info_open");
     body = document.getElementsByTagName("body")[0];
-
-    version_history_innerHTML = version_history_container.innerHTML;
 
     watermark.addEventListener("click", version_history_open);
     version_history_close_button.addEventListener("click", version_history_close);
@@ -23,7 +24,16 @@ async function load_version_history_stylesheet(){
     watermark.addEventListener("mouseup", watermark_mouseup);
     watermark.addEventListener("touchstart", watermark_mousedown);
 
+    var vers_hist_cont = await load_version_history_updatelist();
+    version_history_container.innerHTML += vers_hist_cont;
+    
+    version_history_innerHTML = version_history_container.innerHTML;
+
     luckyapp_core.modules.version_history.loaded = true;
+  }else{
+    await sleep(1);
+    load_version_history_stylesheet();
+  }
 }
 
 function add_window_eventlistener(){

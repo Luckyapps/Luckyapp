@@ -86,6 +86,23 @@ var luckyapp_core = {
                 await load_version_history_stylesheet();
                 luckyapp_core.load_check();
             }
+        },
+        updates: {
+            active: page_config_init.modules.updates.active,
+            updatelists: {
+                luckyapp: {}
+            },
+            info_window_text: "Es wurden einige Änderungen vorgenommen:",
+            info_window_signature: '<hr style="border:1px solid black; width:15%">Wenn Sie einen Fehler/Bug gefunden haben, schreiben Sie uns gerne unter <a href="mailto:thebuissnescreeper@gmail.com">thebuissnescreeper@gmail.com</a>',
+            files: {
+                js_main: "stylesheets/updates/updates.js",
+                css: ["stylesheets/updates/updates.css"],
+                js: ["stylesheets/updates/updatelist.js"]
+            },
+            start: async function(){
+                await start_updates_stylesheet();
+                luckyapp_core.load_check();
+            }
         }
     },
     page_config: page_config_init,

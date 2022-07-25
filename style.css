@@ -18,6 +18,10 @@ a:hover{
   color: #00ffff !important
 }
 
+.invisible{
+  display: none;
+}
+
 #wall{
     position:fixed; 
     top:0; 

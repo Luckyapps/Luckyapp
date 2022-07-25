@@ -1,0 +1,14 @@
+#updatelist li:hover{
+    text-decoration: underline;
+    color: #00ffff;
+    cursor: pointer;
+}
+
+#updates_info_container{
+    text-align: center;
+    padding: 1em;
+}
+
+#updates_info_container ul{
+    text-align: left;
+}
