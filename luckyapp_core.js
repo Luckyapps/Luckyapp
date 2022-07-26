@@ -67,6 +67,18 @@ var luckyapp_core = {
         },
         footer: {
             active: page_config_init.modules.footer.active,
+            links: [
+                {
+                    text: "Impressum",
+                    href: "index.html"
+                },{
+                    text: "Entwicklung",
+                    href: "pages/fastlink/index.html"
+                },{
+                    text: "Template",
+                    href: "pages/template.html"
+                }
+            ],
             files: {
                 js_main: "stylesheets/footer/footer.js",
                 css: ["stylesheets/footer/footer.css"]
@@ -94,6 +106,7 @@ var luckyapp_core = {
             },
             info_window_text: "Es wurden einige Änderungen vorgenommen:",
             info_window_signature: '<hr style="border:1px solid black; width:15%">Wenn Sie einen Fehler/Bug gefunden haben, schreiben Sie uns gerne unter <a href="mailto:thebuissnescreeper@gmail.com">thebuissnescreeper@gmail.com</a>',
+            trigger: false,
             files: {
                 js_main: "stylesheets/updates/updates.js",
                 css: ["stylesheets/updates/updates.css"],

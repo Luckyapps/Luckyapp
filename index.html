@@ -64,16 +64,14 @@
                 },
                 footer: {
                     active: true,
+                    custom_links: false,
                     links: [
                         {
                             text: "Impressum",
-                            href: "#"
+                            href: "pages/fastlink/index.html"
                         },{
                             text: "Entwicklung",
-                            href: "#"
-                        },{
-                            text: "Kontakt",
-                            href: "#"
+                            href: "pages/test/index.html"
                         }
                     ]
                 },
@@ -82,8 +80,9 @@
                     watermark: true
                 },
                 updates: {
-                    active: true,
-                    updatelist: true
+                    active: true, //Muss true, damit version_history funktioniert
+                    updatelist: true,
+                    updatebanner: true
                 }
             },
             appearance: {
@@ -102,9 +101,19 @@
                 <h2>Willkommen auf der Website von Luckyapps</h2>
                 <p>Diese Website bietet eine Übersicht über alle Projekte von Luckyapps.</p>
             </div>
+            <div class="card">
+                <h2>Notizen</h2>
+                <p>Wichtig bei der Nutzung der template.html:
+                    <ol>
+                        <li>Richtiger Link zu luckyapp_core.js</li>
+                        <li>Einstellen von Source auf relativen Pfad der Seite</li>
+                        <li>Html_embed einstellen</li>
+                    </ol>
+                </p>
+            </div>
             <div class="card" id="updates">
                 <h2>Updateverlauf</h2>
-                <p>von Luckyapp</p>
+                <p>Sobald sich etwas an der Seite ändert, wird es hier zu finden sein.</p>
                 <ul id="updatelist"></ul>
             </div>
         </div>
