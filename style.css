@@ -19,7 +19,7 @@ a:hover{
 }
 
 .invisible{
-  display: none;
+  display: none !important;
 }
 
 #wall{
