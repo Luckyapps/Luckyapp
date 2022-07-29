@@ -11,7 +11,7 @@
     <meta name="description" content="Luckyapp ist eine Seite, mit vielen Funktionen, wie einem Rechner, Fastlink, Musik, Luckyassistant, und vielem mehr.">
     <title>Luckyapp5 > Fastlink</title>
     <link href="../../style.css" rel="stylesheet" type="text/css" />
-    <link href="fastlink.css" rel="stylesheet" type="text/css" />
+    <!--<link href="fastlink.css" rel="stylesheet" type="text/css" />-->
   </head>
   <body>
     <script id="page_config_script">
@@ -78,6 +78,14 @@
                 updates: {
                     active: false,
                     updatelist: true
+                },
+                fileloader: {
+                    active: true,
+                    files: {
+                        js_main: "pages/fastlink/fastlink.js",
+                        css: ["pages/fastlink/fastlink.css"]
+                    },
+                    functions: ["start_"]
                 }
             },
             appearance: {
@@ -87,7 +95,7 @@
         }
     </script>
     <script src="../../luckyapp_core.js"></script>
-    <script src="fastlink.js"></script>
+    <!--<script src="fastlink.js"></script>-->
 
     <div id="wall"><div id="ball_container"><div id="ball"></div><div id="bar_container"><div id="bar"></div></div></div></div>
 

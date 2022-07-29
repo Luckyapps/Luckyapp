@@ -116,7 +116,21 @@ var luckyapp_core = {
                 await start_updates_stylesheet();
                 luckyapp_core.load_check();
             }
-        }
+        },
+        fileloader: {
+            active: page_config_init.modules.fileloader.active,
+            files: page_config_init.modules.fileloader.files,
+            start: function(){
+                var funclist = luckyapp_core.page_config.modules.fileloader.functions;
+                console.log(funclist);
+                if(funclist != undefined){
+                    for(i=0;i<funclist.length;i++){
+                        window[funclist[i]]();
+                    }
+                }
+                luckyapp_core.load_check();
+            }
+        },  
     },
     page_config: page_config_init,
     load_check: async function(source){
