@@ -19,3 +19,15 @@
 .header_navbar :hover{
     background-color: rgba(95, 95, 31, 0.562);
 }
+
+@media screen and (max-width: 400px){
+    .header_navbar{
+        flex-direction: column;
+        align-items: normal;
+    }
+    .header_navbar a{
+        border-bottom: 1px solid gray;
+        border-right: none;
+        text-align: center;
+    }
+}

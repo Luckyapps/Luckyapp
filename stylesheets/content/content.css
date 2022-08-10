@@ -33,3 +33,9 @@
     position: sticky;
     top:10px;
 }
+
+@media screen and (max-width: 800px){
+    #content{
+        grid-template-columns: none;
+    }
+}

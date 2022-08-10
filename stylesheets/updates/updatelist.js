@@ -2,6 +2,14 @@ var updatelist_luckyapp = {
     "source": "Luckyapp",
     "content": [
         {
+            id: "dv.1.22081.0",
+            title: "Luckyapp Preview Update 1|aug22",
+            name: "",
+            date: "10.08.2022",
+            type: "UPDATE",
+            description: "<ul><li>Erste optimierung von content und navbar Layouts für Mobilgeräte.</li></ul>"
+        },
+        {
             "id": "dvc.1.22071.0",
             "title": "Luckyapp Update 1|jul22",
             "name": "",
