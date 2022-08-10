@@ -1,9 +1,40 @@
 {
   "fastlink":[
     {
-      "name":"Von Luckyapps <img src='../images/icons/icon-152x152.png' style='height: 2em;display: inline-block;vertical-align: middle;border-radius: 0;'></img>",
+      "name":"Von Luckyapps <img src='../../images/icons/icon-152x152.png' style='height: 2em;display: inline-block;vertical-align: middle;border-radius: 0;'></img>",
       "unterseiten":true,
       "seiten":[
+        {
+          "name":"Aktuelle Projekte",
+          "unterseiten":true,
+          "seiten":[
+            {
+              "name": "Luckyapp",
+              "unterseiten":false,
+              "link":""
+            },
+            {
+              "name": "Lucky_UI",
+              "unterseiten":false,
+              "link":""
+            },
+            {
+              "name": "Assistant",
+              "unterseiten":false,
+              "link":""
+            },
+            {
+              "name": "Bestlist",
+              "unterseiten":false,
+              "link":""
+            },
+            {
+              "name": "Musik",
+              "unterseiten":false,
+              "link":""
+            }
+          ]
+        },
         {
           "name":"Testprojekte",
           "unterseiten":true,
