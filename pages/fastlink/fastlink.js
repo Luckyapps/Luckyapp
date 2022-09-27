@@ -1,6 +1,6 @@
 var fastlist, fasttitle, data, ident, count, seite, letzte, anzahl = 0, letzte2, ident2, titel = "", scroll = "no", firstscroll = "yes", scrollcount = 0;
 
-window.addEventListener("load", start_);
+//window.addEventListener("load", start_);
 
 function start_(){
   var requestURL = "https://luckyapp2.thebuissnescree.repl.co/fastlink/fastlink.json";

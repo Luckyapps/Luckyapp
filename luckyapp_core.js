@@ -77,6 +77,9 @@ var luckyapp_core = {
                 },{
                     text: "Template",
                     href: "pages/template.html"
+                },{
+                    text: "Generator",
+                    href: "pages/generate/generate.html"
                 }
             ],
             files: {
@@ -120,12 +123,11 @@ var luckyapp_core = {
         fileloader: {
             active: page_config_init.modules.fileloader.active,
             files: page_config_init.modules.fileloader.files,
-            start: function(){
+            start: async function(){
                 var funclist = luckyapp_core.page_config.modules.fileloader.functions;
-                console.log(funclist);
                 if(funclist != undefined){
                     for(i=0;i<funclist.length;i++){
-                        window[funclist[i]]();
+                        await window[funclist[i]]();
                     }
                 }
                 luckyapp_core.load_check();
@@ -234,6 +236,12 @@ function load_meta(){
 
 function get_link(absolute_link){
     return luckyapp_core.page_config.source + absolute_link;
+}
+
+async function html_add(content){
+    var html_content = content;
+    html_content = await createHTML(html_content);
+    await document.body.appendChild(html_content);
 }
 
 

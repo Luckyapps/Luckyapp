@@ -38,4 +38,7 @@
     #content{
         grid-template-columns: none;
     }
+    ._first{
+        grid-area: 1;
+    }
 }

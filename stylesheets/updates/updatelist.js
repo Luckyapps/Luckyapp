@@ -2,6 +2,14 @@ var updatelist_luckyapp = {
     "source": "Luckyapp",
     "content": [
         {
+            id: "dv.1.22091.0",
+            title: "Luckyapp Update 1|sep22",
+            name:"",
+            date: "27.09.2022",
+            type: "UPDATE",
+            description: "<ul><li>Neu: <b>Generator</b><ul><li>auf der Seite Generator lässt sich über ein Formular automatisch eine neue Seite für Luckyapp erstellen</li><li>funktion <font color='red'>noch im Aufbau!!!!!</font></li></ul></li><li>Neue Funktion: <b>html_add(content)</b><ul><li>Kann mit ein HTML element erstellen und dem body hinzufügen.</li></ul></li><li><b>Fehlerbehebungen und Optimierungen</b><ul><li>Designanpassungen für Fastlink<ul><li>Änderungen des Fastback-Buttons</li></ul></li><li>Update</li><li>content</li></ul></li></ul>"
+        },
+        {
             id: "dv.1.22081.0",
             title: "Luckyapp Preview Update 1|aug22",
             name: "",

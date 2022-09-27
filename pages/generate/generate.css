@@ -1,0 +1,15 @@
+.sec1{
+    gap:0.5em;background: darkgoldenrod; 
+}
+
+section{
+    background: orangered;
+    border-radius: 10px;
+}
+
+.sec_form{
+    display: flex; 
+    flex-direction: column; 
+    gap:0.5em;
+    padding: 0 20px 20px 20px
+}
