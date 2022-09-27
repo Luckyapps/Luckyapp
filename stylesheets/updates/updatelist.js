@@ -1,6 +1,6 @@
 var updatelist_luckyapp = {
     "source": "Luckyapp",
-    "content": [
+    "content": [ 
         {
             id: "dv.1.22091.0",
             title: "Luckyapp Update 1|sep22",
