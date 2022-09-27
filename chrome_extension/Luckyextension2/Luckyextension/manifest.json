@@ -1,0 +1,34 @@
+{
+  "name": "Luckyextension2",
+  "description": "Zweite Version der Luckyextension.",
+  "version": "2.22091.0",
+  "manifest_version": 3,
+  "permissions": [
+    "storage"
+  ],
+
+  "icons": { 
+    "128": "logo_128.png"
+  },
+
+  "action": {
+    "default_title": "EIN TITEL",
+    "default_popup":"options.html"
+  },
+
+  "options_ui": {
+    "page":"options.html",
+    "open_in_tab": false
+  },
+
+ "content_scripts": [{
+    "js": ["script.js"],
+    "matches": ["https://news.google.com/*","https://www.google.de/*","https://www.google.com/*","https://de.wikipedia.org/*","https://www.wikipedia.de/*","https://minecraft.fandom.com/*","file:///C:/Users/ole/Documents/GitHub/Musik/*"]
+  }],
+
+  "web_accessible_resources": [
+    {
+      "resources": [ "*.css"],
+      "matches": ["https://news.google.com/*","https://www.google.de/*","https://www.google.com/*","https://de.wikipedia.org/*","https://www.wikipedia.de/*","https://minecraft.fandom.com/*"]
+    }]
+}
