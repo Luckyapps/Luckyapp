@@ -4,8 +4,8 @@
     "theme_color": "black",
     "background_color": "black",
     "display": "standalone",
-    "Scope": "/",
-    "start_url": "/index.html",
+    "Scope": "/Luckyapp",
+    "start_url": "/Luckyapp/index.html",
     "icons": [
       {
         "src": "images/icons/icon-72x72.png",
