@@ -1,5 +1,7 @@
 scriptLoader_("https://luckyapps.github.io/Lucky_library/luckylibrary.js");
 
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').then(function(registration){registration.update()})}; //experimenteller Offlinemodus
+
 var luckyapp_core = {
     modules:{
         header: {
