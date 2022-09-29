@@ -138,7 +138,8 @@ var luckyapp_core = {
         window_bar: {
             active: true,
             files: {
-                js_main: "stylesheets/window_bar/window_bar.js"
+                js_main: "stylesheets/window_bar/window_bar.js",
+                css: ["stylesheets/window_bar/window_bar.css"]
             },
             start: async function(){
                 await start_window_bar_stylesheet();

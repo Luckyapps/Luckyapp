@@ -1,0 +1,12 @@
+#control_bar{
+    position: fixed;
+    left: env(titlebar-area-x);
+    top: env(titlebar-area-y);
+    width: env(titlebar-area-width);
+    height: env(titlebar-area-height);
+    background-color:purple;
+}
+
+.page{
+    margin-top: env(titlebar-area-height);
+}
