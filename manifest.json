@@ -3,8 +3,8 @@
     "short_name": "Luckyapp5",
     "theme_color": "black",
     "background_color": "black",
-    "display": "standalone",
     "display_override": ["window-controls-overlay"],
+    "display": "window-controls-overlay",
     "Scope": "/Luckyapp",
     "start_url": "/Luckyapp/index.html",
     "icons": [
