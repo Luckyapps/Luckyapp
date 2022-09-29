@@ -5,6 +5,12 @@
     width: env(titlebar-area-width);
     height: env(titlebar-area-height);
     background-color:purple;
+    display: flex;
+}
+
+#control_bar div{
+    color: black;
+    font-size: 100%;
 }
 
 .page{
