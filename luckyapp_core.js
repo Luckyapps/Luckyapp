@@ -134,7 +134,16 @@ var luckyapp_core = {
                 }
                 luckyapp_core.load_check();
             }
-        },  
+        },
+        window_bar: {
+            active: true,
+            files: {
+                js_main: "stylesheets/window_bar/window_bar.js"
+            },
+            start: async function(){
+                luckyapp_core.load_check();
+            }
+        }
     },
     page_config: page_config_init,
     load_check: async function(source){
