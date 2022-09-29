@@ -6,11 +6,16 @@
     height: env(titlebar-area-height);
     background-color:purple;
     display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 #control_bar div{
     color: black;
-    font-size: 100%;
+    font-size: 20px;
+    gap: 1em;
+    border-right: 1px solid black;
 }
 
 .page{
