@@ -55,12 +55,45 @@ function load_updatelist(list, source, return_required){
             list_li += "</u></h3></li>";
             updatelist.innerHTML += list_li;
         }
+    }else if(source == "Musik"){
+        updatelist = document.getElementById("updatelist");
+        for(i=0; i< list.length; i++){
+            var list_li = "";
+            list_li = "<li onclick='updates_info_open(this, `musik`)' value='"+ i +"'><h3>";
+            if(list[i].type == "UPDATE"){
+                list_li += "<font color='green'>"+ list[i].type +"</font>";
+            }else{
+                list_li += "<font color='green'>"+ list[i].type +"</font>";
+            }
+
+            if(list[i].date != undefined){
+                list_li += " ("+ list[i].date +")";
+            }
+
+            list_li += "<u>";
+
+            if(list[i].title != undefined){
+                list_li += " "+ list[i].title;
+            }else{
+                list_li += " "+ list[i].id;
+            }
+
+            if(list[i].name != undefined){
+                list_li += " : "+ list[i].name;
+            }
+            list_li += "</u></h3></li>";
+            updatelist.innerHTML += list_li;
+        }
     }
 }
 
-function updates_info_open(src){
+function updates_info_open(src, list_name){
     var i = src.value;
-    var list = luckyapp_core.modules.updates.updatelists.luckyapp.list.content;
+    if(!list_name){
+        var list = luckyapp_core.modules.updates.updatelists.luckyapp.list.content;
+    }else{
+        var list = luckyapp_core.modules.updates.updatelists[list_name].list.content;
+    }
     var flyin_content = "";
     flyin_content += "<h1 id='updates_info_header'>"+ list[i].title +" : "+ list[i].name +"</h1><hr>"
                         +"<div class='update_ flyin_content'><p id='updates_info_content' >"+ luckyapp_core.modules.updates.info_window_text +""+ list[i].description +""+ luckyapp_core.modules.updates.info_window_signature +"</p></div>";

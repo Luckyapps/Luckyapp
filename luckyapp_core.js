@@ -25,6 +25,9 @@ var luckyapp_core = {
                     text: "Fastlink",
                     href: "pages/fastlink/index.html"
                 },{
+                    text: "Musik",
+                    href: "pages/musik/index.html"
+                },{
                     text: "Test",
                     href: "pages/test/index.html"
                 }

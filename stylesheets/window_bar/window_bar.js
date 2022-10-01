@@ -1,6 +1,6 @@
 async function start_window_bar_stylesheet(){
     if(luckyapp_core.modules.content.loaded){
-        var html_content = "<div id='control_bar'><div>Hier steht ein Titel</div></div>";
+        var html_content = "<div id='control_bar'><div>Du hast die geheime window_bar entdeckt!!!!</div></div>";
         html_content = await createHTML(html_content);
         document.body.appendChild(html_content);
         if ('windowControlsOverlay' in navigator) {

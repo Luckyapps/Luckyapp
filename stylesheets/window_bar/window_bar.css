@@ -5,7 +5,7 @@
     width: env(titlebar-area-width);
     height: env(titlebar-area-height);
     background-color:purple;
-    display: flex;
+    display: none;
     align-items: center;
     flex-direction: row;
     flex-wrap: nowrap;
