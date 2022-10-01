@@ -7,8 +7,12 @@ async function start_window_bar_stylesheet(){
             navigator.windowControlsOverlay.addEventListener('geometrychange', (event) => {
             if (event.visible) {
                 const rect = event.titlebarAreaRect;
+                document.getElementById("control_bar").style.display = "flex";
                 console.log(rect);
                 // Do something with the coordinates of the title bar area.
+            }else{
+                console.log(invisible);
+                document.getElementById("control_bar").style.display = "none";
             }
             });
         }else{
