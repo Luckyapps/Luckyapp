@@ -3,7 +3,7 @@ var fastlist, fasttitle, data, ident, count, seite, letzte, anzahl = 0, letzte2,
 //window.addEventListener("load", start_);
 
 function start_(){
-  var requestURL = "https://luckyapp2.thebuissnescree.repl.co/fastlink/fastlink.json";
+  var requestURL = "https://luckyapps.github.io/Luckyapp/pages/fastlink/fastlink.json";
   var request = new XMLHttpRequest();
   request.open('GET', requestURL);
   request.responseType = 'json';

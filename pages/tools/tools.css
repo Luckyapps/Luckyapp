@@ -1,0 +1,46 @@
+#heading h1{
+    font-size: 2em;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    gap: 30px;
+}
+
+.tcard{
+    color: black;
+    background-color: gray;
+    border-radius: 20px;
+    padding: 1em;
+}
+
+.tcard h2, .tcard h1, .tseccard h1, .tseccard h2{
+    margin-top: 0;
+}
+
+.tseccard{
+    background-color: #161616;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.nav a{
+    text-decoration: none;
+    color: white;
+    background-color: darkslategray;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+

@@ -29,6 +29,10 @@
     grid-column: 1 / span2;
 }
 
+._middle{
+    align-items: center;
+}
+
 .stick{
     position: sticky;
     top:10px;

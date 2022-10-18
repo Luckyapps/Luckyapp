@@ -30,6 +30,9 @@ var luckyapp_core = {
                 },{
                     text: "Test",
                     href: "pages/test/index.html"
+                },{
+                    text: "Tools",
+                    href: "pages/tools/index.html"
                 }
             ],
             files: {

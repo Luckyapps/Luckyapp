@@ -49,7 +49,7 @@ function load_updatelist(list, source, return_required){
                 list_li += " "+ list[i].id;
             }
 
-            if(list[i].name != undefined){
+            if(list[i].name != undefined && list[i].name != ""){
                 list_li += " : "+ list[i].name;
             }
             list_li += "</u></h3></li>";
