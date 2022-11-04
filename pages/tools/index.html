@@ -68,9 +68,9 @@
                     active: true,
                     files: {
                         css: ["pages/tools/tools.css"],
-                        js: ["pages/tools/tools.js"]
+                        js_main: ["pages/tools/tools.js"]
                     }, //links absolut von luckyapp_core.js aus
-                    functions:[] //nur Name, ohne ()
+                    functions:["pw_generator_init"] //nur Name, ohne ()
                 }
             },
             appearance: {
@@ -94,7 +94,7 @@
                 </section>
                 <section class="nav">
                     <a href="#hangman">Hangman</a>
-                    <a href="#password">Passwort Generator</a>
+                    <a href="#password"><span class="pw_type">Passwort</span> Generator</a>
                     <a href="#assistant">Lucky-Assistant</a>
                 </section>
                 <section id="hangman" class="tseccard">
@@ -102,9 +102,9 @@
                     <div class="tcard"></div>
                 </section>
                 <section id="password" class="tseccard">
-                    <h2>Passwort Generator</h2>
+                    <h2><span class="pw_type">Passwort</span> Generator</h2>
                     <div class="tcard">
-                        <h1>Passwort Generator</h1>
+                        <!--<h1>Passwort Generator</h1>
 
                         <button class="art wahl" id="pw" value="pw" onclick="arten(this)">Passwort</button>
                         <button class="wahl" id="pin" value="pin" onclick="arten(this)">Pin</button>
@@ -115,8 +115,21 @@
 
                         <button id="generate" onclick="generate()">Passwort generieren</button>
 
-                        <div id="fertig"><h2>Dein Passwort lautet: </h2><!--<input id="passwort"></input>--><p id="passwort"></p></div>
+                        <div id="fertig"><h2>Dein Passwort lautet: </h2><!--<input id="passwort"></input>--><!--<p id="passwort"></p></div>
                         <!--<button onclick="copyPasskey()" id="copy">kopieren</button>-->
+                        <div class="pw_type_container">
+                            <button value="password" class="pw_type_button_selected">Passwort</button>
+                            <button value="pin">PIN</button>
+                        </div>
+                        <div class="pw_settings_container">
+                            Anzahl der Zeichen:
+                            <input type="number" id="pw_length_input" value="8"></input>
+                            <button id="pw_generate_button"><span class="pw_type">Passwort</span> generieren</button>
+                        </div>
+                        <div class="pw_result_container">
+                            <h3>Dein <span class="pw_type">Passwort</span> lautet:</h3>
+                            <div id="pw_result">sdggsagas</div>
+                        </div>
                     </div>
                 </section>
                 <section id="assistant" class="tseccard">
