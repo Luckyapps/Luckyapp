@@ -131,14 +131,26 @@ var luckyapp_core = {
         fileloader: {
             active: page_config_init.modules.fileloader.active,
             files: page_config_init.modules.fileloader.files,
+            exec_time:0,
             start: async function(){
                 var funclist = luckyapp_core.page_config.modules.fileloader.functions;
                 if(funclist != undefined){
-                    for(i=0;i<funclist.length;i++){
-                        await window[funclist[i]]();
+                    if(luckyapp_core.loaded == true){
+                        for(i=0;i<funclist.length;i++){
+                            await window[funclist[i]]();
+                        }
+                        console.warn("[Luckyapp_core.modules.fileloader] Funktionen geladen");
+                    }else{
+                        if(luckyapp_core.modules.fileloader.exec_time == 0){
+                            luckyapp_core.load_check();
+                            luckyapp_core.modules.fileloader.exec_time = 1;
+                        }
+                        await sleep(1);
+                        luckyapp_core.modules.fileloader.start();
                     }
+                }else{
+                    luckyapp_core.load_check();
                 }
-                luckyapp_core.load_check();
             }
         },
         window_bar: {
