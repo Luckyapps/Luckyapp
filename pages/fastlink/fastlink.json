@@ -5,6 +5,22 @@
       "unterseiten":true,
       "seiten":[
         {
+          "name":"Lesezeichen",
+          "unterseiten":true,
+          "seiten":[
+            {
+              "name":"Nasa",
+              "unterseiten":false,
+              "link": "https://luckyapps.github.io/nasa/"
+            },
+            {
+              "name":"Bestlist",
+              "unterseiten":false,
+              "link":"https://luckyapps.github.io/bestlist/"
+            }
+          ]
+        },
+        {
           "name":"Aktuelle Projekte",
           "unterseiten":true,
           "seiten":[
