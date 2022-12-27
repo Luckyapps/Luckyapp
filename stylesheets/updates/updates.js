@@ -33,6 +33,10 @@ function load_updatelist(list, source, return_required){
             list_li = "<li onclick='updates_info_open(this)' value='"+ i +"'><h3>";
             if(list[i].type == "UPDATE"){
                 list_li += "<font color='green'>"+ list[i].type +"</font>";
+            }else if(list[i].type == "BUGFIX"){
+                list_li += "<font color='yellow'>"+ list[i].type +"</font>";
+            }else if(list[i].type == "INFO"){
+                list_li += "<font color='yellow'>"+ list[i].type +"</font>";
             }else{
                 list_li += "<font color='green'>"+ list[i].type +"</font>";
             }
