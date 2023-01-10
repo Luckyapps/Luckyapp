@@ -96,6 +96,14 @@ async function generator_run(){
             fileloader: {
                 active: true,
                 files: {}
+            },
+            error: {
+                active: true,
+            },
+            news: {
+                active: true,
+                source: ["stylesheets/news/newslist.js"],
+                //list: "", enthält die Id des listencontainers. Weglassen wenn nicht vorhanden
             }
         },
         appearance: {

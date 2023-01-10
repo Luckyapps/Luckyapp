@@ -93,6 +93,14 @@
                         "js": ""
                     },
                     functions:[]
+                },
+                error: {
+                    active: true,
+                },
+                news: {
+                    active: true,
+                    source: ["stylesheets/news/newslist.js"],
+                    list: "news_output"
                 }
             },
             appearance: {
@@ -131,7 +139,7 @@
         <div class="cont_grid _right">
             <div class="card stick">
                 <h3>Aktuelles</h3>
-                <p>Bisher keine neuen Einträge vorhanden.</p>
+                <div id="news_output"><p>Bisher keine neuen Einträge vorhanden.</p></div>
             </div>
         </div> 
     </div>

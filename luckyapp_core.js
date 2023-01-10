@@ -33,6 +33,12 @@ var luckyapp_core = {
                 },{
                     text: "Tools",
                     href: "pages/tools/index.html"
+                },{
+                    text: "Rechner",
+                    href: "pages/rechner/index.html"
+                },{
+                    text: "News",
+                    href: "pages/news/index.html"
                 }
             ],
             files: {
@@ -132,14 +138,19 @@ var luckyapp_core = {
             active: page_config_init.modules.fileloader.active,
             files: page_config_init.modules.fileloader.files,
             exec_time:0,
+            load: async function(funcname){
+                window[funcname]();
+                console.warn("[Luckyapp_core.modules.fileloader] '"+ funcname +"()' geladen.");
+            },
             start: async function(){
                 var funclist = luckyapp_core.page_config.modules.fileloader.functions;
                 if(funclist != undefined){
                     if(luckyapp_core.loaded == true){
-                        for(i=0;i<funclist.length;i++){
+                        /*for(i=0;i<funclist.length;i++){
                             await window[funclist[i]]();
-                        }
-                        console.warn("[Luckyapp_core.modules.fileloader] Funktionen geladen");
+                        }*/
+                        await funclist.forEach(function(src){luckyapp_core.modules.fileloader.load(src)});
+                        console.warn("[Luckyapp_core.modules.fileloader] Alle Funktionen geladen.");
                     }else{
                         if(luckyapp_core.modules.fileloader.exec_time == 0){
                             luckyapp_core.load_check();
@@ -161,6 +172,41 @@ var luckyapp_core = {
             },
             start: async function(){
                 await start_window_bar_stylesheet();
+                luckyapp_core.load_check();
+            }
+        },
+        error: {
+            active: true,
+            files: {
+                js_main: "stylesheets/error/error.js",
+                css: ["stylesheets/error/error.css"]
+            },
+            start: async function(){
+                await start_error_stylesheet();
+                luckyapp_core.load_check();
+            }
+        },
+        news: {
+            active: page_config_init.modules.news.active,
+            files: {
+                js_main: "stylesheets/news/news.js",
+                js: page_config_init.modules.news.source,
+                css: ["stylesheets/news/news.css"]
+            },
+            start: async function(){
+                await start_news_stylesheet();
+                luckyapp_core.load_check();
+            }
+        },
+        cookies: {
+            active: true,
+            files: {
+                js_main: "stylesheets/cookies/cookies.js",
+                css: ["stylesheets/cookies/cookies.css"]
+            },
+            text:"Bei Nutzung der Website stimmen Sie zu, dass die Website notwendige technische Nutzerdaten (z.B. Darkmode-Einstellungen, Cookieauswahl, Favoriten, Einstellungen) lokal im Browser speichert.",
+            start: async ()=>{
+                await init_cookies_stylesheet();
                 luckyapp_core.load_check();
             }
         }
@@ -186,9 +232,11 @@ var luckyapp_core = {
     load_error: function(event, message){
         if(event != undefined){
             console.log(event);
+            error_show("Ein Fehler ist aufgetreten. Bitte überprüfe deine Internetverbindung. Sollte das Problem dadurch nicht behoben werden, bitte <a href='mailto:thebuissnesscreeper@gmail.com?subject=Luckyapp Fehlermeldung&amp;body="+ event.message +"%0A%0A"+ event.error.message +"%0A%0A"+ event.error.stack +"'>das Problem Melden</a>");
             document.getElementById("ball_container").innerHTML += "<p style='color:red; font-family: calibri; text-align:center'>Ein Fehler ist aufgetreten</p>"
             +"<p style='font-family: calibri; color:white; text-align:center'>Sie können das Laden der Seite erzwingen (die Seite ist dann unvollständig geladen) </p><button style='cursor:pointer' onclick='luckyapp_core.load_check(); console.warn(`Die Seite wird zwangsweise angezeigt`)'>Hier drücken, um die Seite zwangsweise zu laden.</button>";
         }else{
+            error_show("Ein Fehler ist aufgetreten: "+ message);
             document.getElementById("ball_container").innerHTML += "<p style='color:red; font-family: calibri; text-align:center'>Ein Fehler ist aufgetreten: "+ message +"</p>"
             +"<p style='font-family: calibri; color:white; text-align:center'>Sie können das Laden der Seite erzwingen (die Seite ist dann unvollständig geladen) </p><button style='cursor:pointer' onclick='luckyapp_core.load_check(); console.warn(`Die Seite wird zwangsweise angezeigt`)'>Hier drücken, um die Seite zwangsweise zu laden.</button>";
         }

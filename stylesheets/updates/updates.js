@@ -11,7 +11,13 @@ async function start_updates_stylesheet(){
             html_content = await createHTML(html_content);
             await document.body.appendChild(html_content);
             updatebanner = document.getElementById("updatebanner");
-            updatebanner.addEventListener("click", function () {var pseudo = {value: 0};updates_info_open(pseudo); close_updatebanner()});
+            updatebanner.addEventListener("click", function (evt) {
+                if(!updatebanner_close.contains(evt.target)){
+                    var pseudo = {value: 0};
+                    updates_info_open(pseudo); 
+                    close_updatebanner()
+                }
+            });
             updatebanner_close = document.getElementById("updatebanner_close");
             updatebanner_close.addEventListener("click", close_updatebanner);
             updatebanner_container = document.getElementById("updatebanner_container");
@@ -26,68 +32,45 @@ async function start_updates_stylesheet(){
 }
 
 function load_updatelist(list, source, return_required){
-    if(source == "Luckyapp"){
-        updatelist = document.getElementById("updatelist");
-        for(i=0; i< list.length; i++){
-            var list_li = "";
+    updatelist = document.getElementById("updatelist");
+    for(i=0; i< list.length; i++){
+        var list_li = "";
+        if(source == "Luckyapp"){
             list_li = "<li onclick='updates_info_open(this)' value='"+ i +"'><h3>";
-            if(list[i].type == "UPDATE"){
-                list_li += "<font color='green'>"+ list[i].type +"</font>";
-            }else if(list[i].type == "BUGFIX"){
-                list_li += "<font color='yellow'>"+ list[i].type +"</font>";
-            }else if(list[i].type == "INFO"){
-                list_li += "<font color='yellow'>"+ list[i].type +"</font>";
-            }else{
-                list_li += "<font color='green'>"+ list[i].type +"</font>";
-            }
-
-            if(list[i].date != undefined){
-                list_li += " ("+ list[i].date +")";
-            }
-
-            list_li += "<u>";
-
-            if(list[i].title != undefined){
-                list_li += " "+ list[i].title;
-            }else{
-                list_li += " "+ list[i].id;
-            }
-
-            if(list[i].name != undefined && list[i].name != ""){
-                list_li += " : "+ list[i].name;
-            }
-            list_li += "</u></h3></li>";
-            updatelist.innerHTML += list_li;
-        }
-    }else if(source == "Musik"){
-        updatelist = document.getElementById("updatelist");
-        for(i=0; i< list.length; i++){
-            var list_li = "";
+        }else if(source == "Musik"){
             list_li = "<li onclick='updates_info_open(this, `musik`)' value='"+ i +"'><h3>";
-            if(list[i].type == "UPDATE"){
-                list_li += "<font color='green'>"+ list[i].type +"</font>";
-            }else{
-                list_li += "<font color='green'>"+ list[i].type +"</font>";
-            }
-
-            if(list[i].date != undefined){
-                list_li += " ("+ list[i].date +")";
-            }
-
-            list_li += "<u>";
-
-            if(list[i].title != undefined){
-                list_li += " "+ list[i].title;
-            }else{
-                list_li += " "+ list[i].id;
-            }
-
-            if(list[i].name != undefined){
-                list_li += " : "+ list[i].name;
-            }
-            list_li += "</u></h3></li>";
-            updatelist.innerHTML += list_li;
+        }else{
+            list_li = "<li value='"+ i +"'><h3>";
         }
+        if(list[i].type == "UPDATE"){
+            list_li += "<font color='green'>"+ list[i].type +"</font>";
+        }else if(list[i].type == "BUGFIX"){
+            list_li += "<font color='yellow'>"+ list[i].type +"</font>";
+        }else if(list[i].type == "WARNING"){
+            list_li += "<font color='red'>"+ list[i].type +"</font>";
+        }else if(list[i].type == "INFO"){
+            list_li += "<font color='yellow'>"+ list[i].type +"</font>";
+        }else{
+            list_li += "<font color='green'>"+ list[i].type +"</font>";
+        }
+
+        if(list[i].date != undefined){
+            list_li += " ("+ list[i].date +")";
+        }
+
+        list_li += "<u>";
+
+        if(list[i].title != undefined){
+            list_li += " "+ list[i].title;
+        }else{
+            list_li += " "+ list[i].id;
+        }
+
+        if(list[i].name && list[i].name != ""){
+            list_li += " : "+ list[i].name;
+        }
+        list_li += "</u></h3></li>";
+        updatelist.innerHTML += list_li;
     }
 }
 
@@ -98,8 +81,13 @@ function updates_info_open(src, list_name){
     }else{
         var list = luckyapp_core.modules.updates.updatelists[list_name].list.content;
     }
+    if(list[i].name && list[i].name != ""){
+        var list_symbol = " : ";
+    }else{
+        var list_symbol= " ";
+    }
     var flyin_content = "";
-    flyin_content += "<h1 id='updates_info_header'>"+ list[i].title +" : "+ list[i].name +"</h1><hr>"
+    flyin_content += "<h1 id='updates_info_header'>"+list[i].id +" "+ list[i].title + list_symbol + list[i].name +"</h1><hr>"
                         +"<div class='update_ flyin_content'><p id='updates_info_content' >"+ luckyapp_core.modules.updates.info_window_text +""+ list[i].description +""+ luckyapp_core.modules.updates.info_window_signature +"</p></div>";
     flyin_content = "<div id='updates_info_container'>"+ flyin_content +"<br></div>";
     flyin_open(flyin_content);

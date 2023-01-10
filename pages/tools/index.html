@@ -70,7 +70,15 @@
                         css: ["pages/tools/tools.css"],
                         js_main: ["pages/tools/tools.js"]
                     }, //links absolut von luckyapp_core.js aus
-                    functions:["pw_generator_init"] //nur Name, ohne ()
+                    functions:["pw_generator_init", "hangman_init"] //nur Name, ohne ()
+                },
+                error: {
+                    active: true,
+                },
+                news: {
+                    active: true,
+                    source: ["stylesheets/news/newslist.js"],
+                    list: "", //enthält die Id des listencontainers. Weglassen wenn nicht vorhanden
                 }
             },
             appearance: {

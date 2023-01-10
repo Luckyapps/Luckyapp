@@ -1,7 +1,7 @@
 /*-------VERSION HISTORY--------*/
 #watermark{
     position: fixed;
-    z-index: 999;
+    z-index: 998;
     right: 10px;
     bottom: 10px;
     font-family: calibri;

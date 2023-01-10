@@ -2,6 +2,13 @@ var updatelist_luckyapp = {
     "source": "Luckyapp",
     "content": [ 
         {
+            id: "dv.1.23011.0",
+            title: "Luckyapp Update 1|jan23",
+            name:"",
+            date: "10.01.2023",
+            type: "UPDATE",
+            description: "<ul><li>Neues Modul: <b>News</b><ul><li>Eine Option zum aktivieren des Moduls wurde in der Page_config hinzugefügt. Dort kann auch über die Quelle der Liste und der Name des Listenoutputelements eingestellt werden.</li><li>Es ist möglich eine Liste mit einer Newsübersicht einzubetten.</li></ul></li><li>Neue Seite: <b>News</b><ul><li>Hier können News durchsucht und angeschaut werden.</li></ul></li><li>Neue Seite: <b>Rechner</b><ul><li>Es ist eine erste, nur eingeschränkt funktionale Taschenrechnerseite.</li><li>Die Seite befindet sich noch in der Entwicklung.</li></ul></li><li>Neues Modul: <b>Cookies</b><ul><li>Zeigt beim ersten Laden der Seite ein Banner an, auf dem über Cookies informiert wird.<ul><li>Der Bannertext kann im luckyapp_core geändert werden.</li></ul></li><li>Kann im luckyapp_core aktiviert werden.</li></ul></li><li>Die Template wurde aktualisiert.</li><li><b>Tools</b> Update<ul><li><b>Hangman</b> erste funtionalität wurde hinzugefügt.<ul><li>Es ist nur eine erste Entwicklungsversion.</li></ul></li></ul></li><li>Neues Modul: <b>Error</b><ul><li>Mit dem Error Modul können Warnhinweise und Infos angezeigt werden.</li></ul></li><li>Bugfix:<ul><li>Navbar max width break fix</li><li>Watermark z-index fix</li></ul></li><li>Updatesmodul optimierungen.</li></ul>"
+        },{
             id: "dv.1.22101.0",
             title: "Luckyapp Update 1|okt22",
             name:"Musik Update",
