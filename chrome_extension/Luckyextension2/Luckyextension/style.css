@@ -1,0 +1,29 @@
+/*GOOGLE*/
+
+.gb_Ec .gb_pc .gb_be:before, .gb_vc .gb_pc .gb_be:before { /*News OLD*/
+    content: url(https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg)!important;
+}
+
+.gb_Kc .gb_uc .gb_ge:before, .gb_Ac .gb_uc .gb_ge:before { /*News New*/
+    content: url(https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg)!important;
+}
+
+.SJajHc{ /*gooooogle bottom*/
+    background-position-y: 0px !important;
+}
+
+.fSnalc{
+    stroke:#4184f1 !important;
+}
+
+.ZqPjbb{
+    stroke:#e04134 !important; 
+}
+
+.oOg6Ne{
+    stroke:#f2b506 !important;
+}
+
+.aPiskd{
+    stroke:#329d4f !important;
+}
