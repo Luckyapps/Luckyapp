@@ -1,20 +1,20 @@
 var wiki;
 
-chrome.storage.sync.onChanged.addListener(function (changes, namespace) {
+chrome.storage.sync.onChanged.addListener(function (changes, namespace) { //ONCHANGE
     console.log(changes);
     for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
       console.log(
         `Storage key "${key}" in namespace "${namespace}" changed.`,
         `Old value was "${oldValue}", new value is "${newValue}".`
       );
-      if(key == "wiki"){
+      if(key == "wiki" || key == "ijf"){ //reload onchange
         window.location.reload(false);
       }
     }
   });
 
-window.addEventListener("load", function(){
-    var wiki_ = chrome.storage.sync.get(["wiki"], function(result){return result.wiki});
+window.addEventListener("load", async function(){ //Onload Wikipedia
+    var wiki_ = await chrome.storage.sync.get(["wiki"]).then((result) =>{return result.wiki});
     console.log(wiki_);
     if(wiki_ == undefined){
         chrome.storage.sync.set({"wiki": true});
@@ -24,7 +24,7 @@ window.addEventListener("load", function(){
     }
     loadCSS("style");
     extension_load_style();
-})
+});
 
 function loadCSS(file) {
   var link = document.createElement("link");

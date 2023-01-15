@@ -22,8 +22,8 @@
   },
 
  "content_scripts": [{
-    "js": ["script.js"],
-    "matches": ["https://news.google.com/*","https://www.google.de/*","https://www.google.com/*","https://de.wikipedia.org/*","https://www.wikipedia.de/*","https://minecraft.fandom.com/*","file:///C:/Users/ole/Documents/GitHub/Musik/*"]
+    "js": ["script.js", "ijf.js"],
+    "matches": ["https://judo.ijf.org/*", "https://news.google.com/*","https://www.google.de/*","https://www.google.com/*","https://de.wikipedia.org/*","https://www.wikipedia.de/*","https://minecraft.fandom.com/*","file:///C:/Users/ole/Documents/GitHub/Musik/*"]
   }],
 
   "web_accessible_resources": [
