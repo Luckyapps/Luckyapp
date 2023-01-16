@@ -9,7 +9,7 @@ async function start_news_stylesheet(){
 }
 
 async function load_news_stylesheet(){
-    if(newslist){
+    if(newslist!=undefined){
         console.log(newslist);
         if(luckyapp_core.page_config.modules.news.list){
             var news_output = document.getElementById(luckyapp_core.page_config.modules.news.list);
@@ -47,7 +47,7 @@ async function load_news_stylesheet(){
     }else{
         console.warn("newslist forceload");
         await sleep(3);
-        await script_loader("newslist.js");
+        await scriptLoader_("newslist.js");
         load_news_stylesheet();
     }
 }
