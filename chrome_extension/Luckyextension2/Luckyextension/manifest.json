@@ -1,7 +1,7 @@
 {
   "name": "Luckyextension2",
   "description": "Zweite Version der Luckyextension.",
-  "version": "2.22091.0",
+  "version": "2.23011.0",
   "manifest_version": 3,
   "permissions": [
     "storage"

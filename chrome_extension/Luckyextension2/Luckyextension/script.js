@@ -15,7 +15,6 @@ chrome.storage.sync.onChanged.addListener(function (changes, namespace) { //ONCH
 
 window.addEventListener("load", async function(){ //Onload Wikipedia
     var wiki_ = await chrome.storage.sync.get(["wiki"]).then((result) =>{return result.wiki});
-    console.log(wiki_);
     if(wiki_ == undefined){
         chrome.storage.sync.set({"wiki": true});
         wiki = true;

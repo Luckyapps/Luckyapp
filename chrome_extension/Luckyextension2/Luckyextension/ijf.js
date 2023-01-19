@@ -17,7 +17,8 @@ window.addEventListener("load",async()=>{
 
 window.addEventListener("resize",()=>{
     if(window.location.host == "judo.ijf.org"){
-        start_ijf_script();
+        document.getElementsByTagName("hls-video")[0].style.height = window.getComputedStyle(document.getElementsByClassName("video16_9")[0],null).getPropertyValue("height");
+        document.querySelector("body > main > div.main-content.main-content--with-page-header.page--upload > div > div.video.video16_9 > hls-video").shadowRoot.querySelector("video").style.height = window.getComputedStyle(document.getElementsByClassName("video16_9")[0],null).getPropertyValue("height"); 
     }
 })
 
