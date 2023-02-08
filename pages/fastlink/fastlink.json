@@ -17,6 +17,11 @@
               "name":"Bestlist",
               "unterseiten":false,
               "link":"https://luckyapps.github.io/bestlist/"
+            },
+            {
+              "name":"Minecraft",
+              "unterseiten":false,
+              "link":"https://luckyapps.github.io/Luckyapps/pages/minecraft/index.html"
             }
           ]
         },
