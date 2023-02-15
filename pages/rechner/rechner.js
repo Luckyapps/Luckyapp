@@ -35,17 +35,26 @@ function keytest(key){
         last_type = "number";
         current_number += key;
         input_show();
-    }else if(["+","*","-","/","h","w"].includes(key)){
-        if(last_type == "operator" && key != "w"){
+    }else if(["+","*","-","/","h","w","(",")"].includes(key)){
+        var klammer = false;
+        if(key == "("){
+            klammer = true;
+        }else if(key == ")"){
+            klammer = true;
+        }
+        if(last_type == "operator" && key != "w" && klammer != true){
             return false;
         }else if(last_type == "compute"){
             current_number = result_history[result_history.length-1];
             console.log(current_number);
         }
-        if(key != "w"){
+        if(key != "w" && key !="(" && last_type !="klammer"){
             input_list.push(parseFloat(current_number));
         }
         last_type = "operator";
+        if(key==")"){
+            last_type = "klammer";
+        }
         input_list.push(key);
         current_number = "";
         console.log(input_list);
@@ -83,10 +92,13 @@ function input_show(){
     r_result_container.innerHTML = input + current_number;
 }
 
-function compute(recompute_pre){
+async function compute(recompute_pre){
     if(!recompute_pre){
-        input_list.push(parseFloat(current_number));
+        if(last_type != "operator"&&last_type!="klammer"){
+            input_list.push(parseFloat(current_number));
+        }
     }
+    console.log(input_list);
     current_number = "";
     var ergebnis;
     var compute_list = input_list;
@@ -95,6 +107,30 @@ function compute(recompute_pre){
     compute_history.push(input_list);
     localStorage.setItem("compute_history", JSON.stringify(compute_history));
 
+    var klammer = false;
+    for(i=0;i<compute_list.length;i++){ //
+        if(typeof(compute_list[i]) != "number"){
+            if(compute_list[i] == "("){
+                var indx1 = i;
+                klammer = true;
+            }else if(compute_list[i] == ")"){
+                var indx2 = i;
+                klammer = true;
+            }
+        }
+    }
+
+    if(klammer){
+        /*console.log(indx1);
+        console.log(indx2);
+        console.log(indx2-indx1+1);
+        console.log(compute_list.slice(indx1+1,indx2));
+        console.log(compute_list);
+        console.log(await compute2(false, compute_list.slice(indx1+1,indx2)));*/
+        compute_list.splice(indx1,indx2-indx1+1,await compute2(false, compute_list.slice(indx1+1,indx2)));
+        //console.log(compute_list);
+    }
+    
     for(i=0;i<compute_list.length;i++){ //Punkt vor Strich --> Wurzel ausrechnen
         if(typeof(compute_list[i]) != "number"){
             if(compute_list[i] == "w"){
@@ -175,4 +211,106 @@ function compute(recompute_pre){
     document.getElementById("r_result_container").innerHTML = ergebnis;
     compute_list = [];
     input_list = [];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+async function compute2(recompute_pre, equation){
+    var ergebnis;
+    var compute_list = equation;
+    var recompute = false;
+
+    for(i=0;i<compute_list.length;i++){ //Punkt vor Strich --> Wurzel ausrechnen
+        if(typeof(compute_list[i]) != "number"){
+            if(compute_list[i] == "w"){
+                var erg_tmp = Math.sqrt(compute_list[i+1]);
+                compute_list.splice(i,3,erg_tmp);
+                console.log(compute_list);
+                i=0;
+            }
+        }
+    }
+    for(i=0;i<compute_list.length;i++){ //Punkt vor Strich --> Hoch ausrechnen
+        if(typeof(compute_list[i]) != "number"){
+            if(compute_list[i] == "h"){
+                var erg_tmp = Math.pow(compute_list[i-1],compute_list[i+1]);
+                compute_list.splice(i-1,3,erg_tmp);
+                console.log(compute_list);
+                i=0;
+            }
+        }
+    }
+    for(i=0;i<compute_list.length;i++){ //Punkt vor Strich --> Mal ausrechnen
+        if(typeof(compute_list[i]) != "number"){
+            if(compute_list[i] == "*"){
+                if(compute_list[i-2] == "/"){ // Wenn erst Geteilt
+                    recompute = true;
+                }else{
+                    var erg_tmp = compute_list[i-1] * compute_list[i+1];
+                    compute_list.splice(i-1,3,erg_tmp);
+                    console.log(compute_list);
+                    i=0;
+                }
+            }
+        }
+    }
+    for(i=0;i<compute_list.length;i++){ //Punkt vor Strich --> Geteilt ausrechnen
+        if(typeof(compute_list[i]) != "number"){
+            if(compute_list[i] == "/"){
+                if(compute_list[i-2] == "*"){ // Wenn erst Mal
+                    recompute = true;
+                }else{
+                    var erg_tmp = compute_list[i-1] / compute_list[i+1];
+                    console.log(i);
+                    compute_list.splice(i-1,3,erg_tmp);
+                    console.log(compute_list);
+                    i=0;
+                }
+            }
+        }
+    }
+
+    if(recompute){
+        recompute = false;
+        var ergebnis = await compute(true);
+        return ergebnis;
+    }
+
+    console.log(compute_list);
+    for(i=0;i<compute_list.length;i++){ //Addieren und Subtrahieren
+        if(typeof(compute_list[i]) != "number"){
+            if(compute_list[i] == "+"){
+                var erg_tmp = compute_list[i-1] + compute_list[i+1];
+                compute_list.splice(i-1,3,erg_tmp);
+                console.log(compute_list);
+                i=0;
+            }else if(compute_list[i] == "-"){
+                var erg_tmp = compute_list[i-1] - compute_list[i+1];
+                compute_list.splice(i-1,3,erg_tmp);
+                console.log(compute_list);
+                i=0;
+            }
+        }
+    }
+
+    return compute_list[0];
 }
