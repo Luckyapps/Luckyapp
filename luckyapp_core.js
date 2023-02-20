@@ -317,7 +317,7 @@ function get_link(absolute_link){
     return luckyapp_core.page_config.source + absolute_link;
 }
 
-async function html_add(content){
+async function html_add(content){ //Add HTML to body
     var html_content = content;
     html_content = await createHTML(html_content);
     await document.body.appendChild(html_content);
@@ -341,46 +341,6 @@ var url_data = new Werteliste(location.search);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function cssLoader_(file, callback){ //Ein CSS stylesheet einbetten
     var link = document.createElement("link");
     link.href = file;
@@ -393,7 +353,6 @@ function cssLoader_(file, callback){ //Ein CSS stylesheet einbetten
         }
     }
 }
-
 
 async function scriptLoader_(path, callback){ //Ein JS script einbetten
     var script = document.createElement('script');
