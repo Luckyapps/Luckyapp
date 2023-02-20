@@ -37,9 +37,7 @@ function keytest(key){
         input_show();
     }else if(["+","*","-","/","h","w","(",")"].includes(key)){
         var klammer = false;
-        if(key == "("){
-            klammer = true;
-        }else if(key == ")"){
+        if(key == "(" || key==")"){
             klammer = true;
         }
         if(last_type == "operator" && key != "w" && klammer != true){
@@ -108,7 +106,7 @@ async function compute(recompute_pre){
     localStorage.setItem("compute_history", JSON.stringify(compute_history));
 
     var klammer = false;
-    for(i=0;i<compute_list.length;i++){ //
+    for(i=0;i<compute_list.length;i++){ // Klammerdetektion
         if(typeof(compute_list[i]) != "number"){
             if(compute_list[i] == "("){
                 var indx1 = i;
@@ -120,7 +118,7 @@ async function compute(recompute_pre){
         }
     }
 
-    if(klammer){
+    if(klammer){ // Klammer berechnen
         /*console.log(indx1);
         console.log(indx2);
         console.log(indx2-indx1+1);
@@ -131,7 +129,7 @@ async function compute(recompute_pre){
         //console.log(compute_list);
     }
     
-    for(i=0;i<compute_list.length;i++){ //Punkt vor Strich --> Wurzel ausrechnen
+    for(i=0;i<compute_list.length;i++){ //Wurzel ausrechnen
         if(typeof(compute_list[i]) != "number"){
             if(compute_list[i] == "w"){
                 var erg_tmp = Math.sqrt(compute_list[i+1]);
@@ -141,7 +139,7 @@ async function compute(recompute_pre){
             }
         }
     }
-    for(i=0;i<compute_list.length;i++){ //Punkt vor Strich --> Hoch ausrechnen
+    for(i=0;i<compute_list.length;i++){ //Hoch ausrechnen
         if(typeof(compute_list[i]) != "number"){
             if(compute_list[i] == "h"){
                 var erg_tmp = Math.pow(compute_list[i-1],compute_list[i+1]);
@@ -239,7 +237,7 @@ async function compute2(recompute_pre, equation){
     var compute_list = equation;
     var recompute = false;
 
-    for(i=0;i<compute_list.length;i++){ //Punkt vor Strich --> Wurzel ausrechnen
+    for(i=0;i<compute_list.length;i++){ //Wurzel ausrechnen
         if(typeof(compute_list[i]) != "number"){
             if(compute_list[i] == "w"){
                 var erg_tmp = Math.sqrt(compute_list[i+1]);
@@ -249,7 +247,7 @@ async function compute2(recompute_pre, equation){
             }
         }
     }
-    for(i=0;i<compute_list.length;i++){ //Punkt vor Strich --> Hoch ausrechnen
+    for(i=0;i<compute_list.length;i++){ // Hoch ausrechnen
         if(typeof(compute_list[i]) != "number"){
             if(compute_list[i] == "h"){
                 var erg_tmp = Math.pow(compute_list[i-1],compute_list[i+1]);

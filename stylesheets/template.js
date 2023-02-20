@@ -1,4 +1,4 @@
-async function start_xxxx_stylesheet(){
+async function start_xxxx_stylesheet(){ //html embed
     var ready_to_load = false;
     for(i=0; ready_to_load != true;i++){
         if(luckyapp_core.modules.content.loaded){
@@ -17,7 +17,7 @@ async function start_xxxx_stylesheet(){
 }
 
 
-async function start_xxxx_stylesheet(){
+async function start_xxxx_stylesheet(){ //no html embed
     var ready_to_load = false;
     for(i=0; ready_to_load != true;i++){
         if(luckyapp_core.modules.content.loaded){

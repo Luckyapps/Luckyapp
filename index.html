@@ -88,9 +88,9 @@
                     updatebanner: true
                 },
                 fileloader: {
-                    active: false,
+                    active: true,
                     files: {
-                        "js": ""
+                        css: ["home.css"]
                     },
                     functions:[]
                 },
@@ -118,6 +118,16 @@
             <div class="card">
                 <h2>Willkommen auf der Website von Luckyapps</h2>
                 <p>Diese Website bietet eine Übersicht über alle Projekte von Luckyapps.</p>
+                <div class="projects_container">
+                    <div onclick="window.location = '../Musik/index.html'">
+                        <h3>Musik</h3>
+                        <p>Bei Musik handelt es sich um einen Radioplayer, um Werbefrei Onlineradio zu hören.</p>
+                    </div>
+                    <div onclick="window.location = '../nasa/index.html'">
+                        <h3>Nasa Api Request</h3>
+                        <p>Bilder aus der Nasa Datenbank suchen und anschauen.</p>
+                    </div>
+                </div>
             </div>
             <div class="card">
                 <h2>Notizen</h2>
