@@ -39,6 +39,9 @@ var luckyapp_core = {
                 },{
                     text: "News",
                     href: "pages/news/index.html"
+                },{
+                    text: "APIs und Tests",
+                    href: "pages/apitest/index.html"
                 }
             ],
             files: {
@@ -219,7 +222,7 @@ var luckyapp_core = {
         console.log(load_status +"/"+ loaded_modules_count +" Module geladen");*/
         document.getElementById("bar").style.width = (100/loaded_modules_count ) * load_status +"%";
         await sleep(parseFloat(window.getComputedStyle(document.getElementById("bar")).getPropertyValue("transition-Duration"))*1000);
-        if(load_status == (loaded_modules_count)){
+        if(load_status >= (loaded_modules_count)){
             document.getElementById("wall").style.display = "none";
             document.getElementsByTagName('html')[0].style.overflow = "";
             if(luckyapp_core.loaded){
