@@ -267,11 +267,11 @@ function load_luckyapp_core(){
                 scriptLoader(luckyapp_core.page_config.source + luckyapp_core.modules[luckyapp_core.modules.keylist[i]].files.js_main, luckyapp_core.modules[luckyapp_core.modules.keylist[i]].start);
             }
             if(luckyapp_core.modules[luckyapp_core.modules.keylist[i]].files.js){ //Wenn js
-                loaded_modules_count++;
+                luckyapp_core.modules[luckyapp_core.modules.keylist[i]].files.js.forEach(function(src){loaded_modules_count++});
                 luckyapp_core.modules[luckyapp_core.modules.keylist[i]].files.js.forEach(function(src){scriptLoader(luckyapp_core.page_config.source + src, luckyapp_core.load_check)});
             }
             if(luckyapp_core.modules[luckyapp_core.modules.keylist[i]].files.css){ //Wenn css
-                loaded_modules_count++;
+                luckyapp_core.modules[luckyapp_core.modules.keylist[i]].files.css.forEach(function(src){loaded_modules_count++});
                 luckyapp_core.modules[luckyapp_core.modules.keylist[i]].files.css.forEach(function(src){cssLoader_(luckyapp_core.page_config.source + src, luckyapp_core.load_check)});
             }
         }
@@ -377,3 +377,22 @@ async function scriptLoader_(path, callback){ //Ein JS script einbetten
       document.getElementsByTagName("head")[0].appendChild(script);
     }
   }
+
+
+//Subpage Manager (Buttoncontrol)
+window.addEventListener("popstate", (event) => {
+    //conditions (Wenn button gedrück => und ... dann...)
+    /*==> if(n_flyin_state == "open"){
+        n_flyin_close();
+        window.history.forward(1);
+    }*/
+});
+
+function openSubpage(name){
+    if(location.search == ""){
+        var url = "?"+name;
+    }else{
+        var url = location.search +"&"+name;
+    }
+    history.pushState({ page: 1 }, name, url);
+}
