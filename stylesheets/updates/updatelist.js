@@ -2,6 +2,13 @@ var updatelist_luckyapp = {
     "source": "Luckyapp",
     "content": [ 
         {
+            id: "dv.1.23051.0",
+            title: "Luckyapp Update 1|mai23",
+            name:"Luckyapp_Core Bugfix",
+            date: "22.05.2023",
+            type: "Bugfix",
+            description: "<ul><li>Bugfix: <ul><li>Ein Bug im Ladesystem wurde entfernt.</li></ul></li></ul>"
+        },{
             id: "dv.1.23011.0",
             title: "Luckyapp Update 1|jan23",
             name:"",
