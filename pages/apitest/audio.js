@@ -151,6 +151,23 @@ var playbuttons = {
                 buttons[i].innerHTML = ">";
             }
         }
+    },
+    updateAll: function(){ //Experimentell
+        var buttons = player.playbuttons;
+        for(i=0;i<buttons.length;i++){
+            if(player.audioPlaying){
+                for(j=0;j<player.currentAudio.buttons.length;j++){
+                    if(buttons[i] == player.currentAudio.buttons[j]){
+                        buttons[i].innerHTML = "||";
+                        break;
+                    }else{
+                        buttons[i].innerHTML = ">";
+                    }
+                }
+            }else{
+                buttons[i].innerHTML = ">";
+            }
+        }
     }
 }
 
@@ -199,6 +216,12 @@ function resetPlaybuttons(){
     }
 }
 
+function reloadPlaybuttons(){
+    resetPlaybuttons();
+    loadPlaybuttons();
+    playbuttons.updateAll();
+}
+
 function loadPlaybars(){
     var playbars = document.getElementsByClassName("playbar");
     for(i=0;i<playbars.length;i++){
@@ -231,7 +254,7 @@ function playbarsclickeventlistener(e){
 
 
 
-function loadMediaInterface(audio_id){
+function loadMediaInterface(audio_id, artist){
     var data = player.currentAudio;
 
     if(audio_id){
@@ -248,9 +271,13 @@ function loadMediaInterface(audio_id){
         data.name = audio_id;
     }
 
+    if(!artist){
+        artist = "Luckyapps";
+    }
+
     navigator.mediaSession.metadata = new MediaMetadata({
         title: data.name,
-        artist: 'Luckyapps',
+        artist: artist,
         album: 'Luckyapps Media Player',
         artwork: [
             //{ src: 'https://dummyimage.com/96x96',   sizes: '96x96',   type: 'image/png' },
