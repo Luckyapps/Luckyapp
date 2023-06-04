@@ -47,3 +47,54 @@ function start2(){
     i = i + 1;
   }
 }
+
+async function start2_1(){
+  console_log("LETSGO");
+  var ASchrauben = [{}, {}, {}];
+  var METRISCH = 0;
+  var METRISCHFEIN = 1;
+  var TRAPEZ = 2;
+  var ROHRG = 3;
+  
+  let i = 1;
+  let k = 0;
+  var z = 3;
+  
+  while (i <= z) {
+    console_log(`Laenge          der ${i}-ten Schraube:`);
+    ASchrauben[i].fLaenge = await keyinput();
+    console_log(`Gewindelaenge   der ${i}-ten Schraube: `);
+    ASchrauben[i].fGLaenge = await keyinput();
+    console_log(`Nenndurchmesser der ${i}-ten Schraube: `);
+    ASchrauben[i].iDurchmesser = await keyinput();
+    console_log(`Gewinde         der ${i}-ten Schraube: `);
+    console_log("Metrisch (0), Metrisch Feingewinde (1), Trapezgew. (2), Rohrgew. (3)");
+    k = await keyinput();;
+    switch (k) {
+      case 0:
+        ASchrauben[i].Gewinde = METRISCH;
+        break;
+      case 1:
+        ASchrauben[i].Gewinde = METRISCHFEIN;
+        break;
+      case 2:
+        ASchrauben[i].Gewinde = TRAPEZ;
+        break;
+      case 3:
+        ASchrauben[i].Gewinde = ROHRG;
+        break;
+      default:
+        break;
+    }
+    i = i + 1;
+  }
+  i = 1;
+  
+  while (i <= z) {
+    console_log(`Laenge          der ${i}-ten Schraube: ${ASchrauben[i].fLaenge}`);
+    console_log(`Gewindelaenge   der ${i}-ten Schraube: ${ASchrauben[i].fGLaenge}`);
+    console_log(`Nenndurchmesser der ${i}-ten Schraube: ${ASchrauben[i].iDurchmesser}`);
+    console_log(`Gewinde         der ${i}-ten Schraube: ${ASchrauben[i].Gewinde}`);
+    i = i + 1;
+  }
+}
