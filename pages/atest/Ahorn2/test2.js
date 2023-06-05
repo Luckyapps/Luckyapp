@@ -49,7 +49,8 @@ function start2(){
 }
 
 async function start2_1(){
-  console_log("LETSGO");
+  document.getElementById("tb1").style.borderColor = "unset";
+  document.getElementById("tb2").style.borderColor = "red";
   var ASchrauben = [{}, {}, {}];
   var METRISCH = 0;
   var METRISCHFEIN = 1;
@@ -61,8 +62,8 @@ async function start2_1(){
   var z = 3;
   
   while (i <= z) {
-    console_log(`Laenge          der ${i}-ten Schraube:`);
-    ASchrauben[i].fLaenge = await keyinput();
+    console_log(`Laenge          der ${i}-ten Schraube:`); //console.log() mit console_log() getauscht
+    ASchrauben[i].fLaenge = await keyinput(); //Quelle auf await keyinput() geändert
     console_log(`Gewindelaenge   der ${i}-ten Schraube: `);
     ASchrauben[i].fGLaenge = await keyinput();
     console_log(`Nenndurchmesser der ${i}-ten Schraube: `);
