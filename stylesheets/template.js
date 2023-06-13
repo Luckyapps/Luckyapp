@@ -16,6 +16,15 @@ async function start_xxxx_stylesheet(){ //html embed
     }
 }
 
+//Subpage Manager (Buttoncontrol)
+window.addEventListener("popstate", (event) => {
+    //conditions (Wenn button gedrück => und ... dann...)
+    /*==> if(n_flyin_state == "open"){
+        n_flyin_close();
+        window.history.forward(1);
+    }*/
+});
+
 
 async function start_xxxx_stylesheet(){ //no html embed
     var ready_to_load = false;

@@ -36,6 +36,15 @@ async function load_version_history_stylesheet(){
   }
 }
 
+//Subpage Manager (Buttoncontrol)
+window.addEventListener("popstate", (event) => {
+  //conditions (Wenn button gedrück => und ... dann...)
+  if(version_history_container.classList.contains("version_history_opened")){
+      version_history_close();
+      window.history.forward(1);
+  }
+});
+
 function add_window_eventlistener(){
   window.addEventListener('click', window_clicked)   
 }
@@ -54,6 +63,7 @@ function window_clicked(e){
 }
 
 function flyin_open(content, type){ //Öffnen eines Flyin-Fensters: flyin_open([content]) --> [content] muss html als String sein
+  openSubpage("flyin");
   flyin = true;
   if(version_history_container.classList.contains("version_history_opened")){//Experimentell: Wenn schon geöffnet
     flyin_close("flyin", content, type, "newflyin");
@@ -85,6 +95,7 @@ function flyin_open(content, type){ //Öffnen eines Flyin-Fensters: flyin_open([
 }
 
 function flyin_close(origin, content, type, reason){
+  history.back();
   body.style.overflow = "unset";
   version_history_grid_container.style.overflow = "hidden";
   version_history_grid_container.classList = "version_history_grid_container_close";
@@ -105,6 +116,7 @@ function flyin_close(origin, content, type, reason){
 
 function version_history_open(evt){
   add_window_eventlistener();
+  openSubpage("version_history");
     if((version_history_container.classList.contains("version_history_opened") && evt.target.id != "watermark") || flyin){//Experimentell: Wenn schon geöffnet
       flyin = false;
       flyin_close("version_history");
@@ -128,6 +140,8 @@ function version_history_open(evt){
 }
 
 function version_history_close(){
+  history.back();
+  console.log("close");
   flyin = false;
     body.style.overflow = "unset";
     version_history_grid_container.style.overflow = "hidden";
