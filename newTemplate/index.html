@@ -3,7 +3,7 @@
   <body>
     <script id="page_config_script">
         var page_config_init = {
-            source: "../",
+            source: "./",
             modules:{
                 meta: {
                     active: true,
@@ -20,11 +20,11 @@
                     charset: "utf-8",
                     manifest: "manifest.json"
                 },
-                header: {
+                /*header: {
                     active: true,
                     title: "Luckyapp5",
                     subtitle: "Redesign"
-                },
+                },*/
                 navbar: {
                     active: true,
                     custom_links: false,
@@ -36,16 +36,11 @@
                         }
                     ]
                 },
-                preset: {
-                    active: true, //Muss true
-                    type: "grid", //false, zum deaktivieren -->error ["grid"]false
-                    prop: "2columns"
-                },
-                content: {
+                /*content: {
                     active: true,
-                },
+                },*/
                 footer: {
-                    active: true,
+                    active: false,
                     custom_links: false,
                     links: [
                         {
@@ -70,38 +65,26 @@
                 },
                 error: {
                     active: true,
-                },
+                }/*,
                 news: {
                     active: true,
                     source: ["stylesheets/news/newslist.js"],
                     list: "", //enthält die Id des listencontainers. Weglassen wenn nicht vorhanden
-                }
-            },
+                }*/
+            }/*,
             appearance: {
                 font_style: "calibri",
                 theme: "light"
-            }
+            }*/
         }
     </script>
-    <script src="../luckyapp_core.js"></script>
+    <script src="luckyapp_core.js"></script>
 
     <div id="wall"><div id="ball_container"><div id="ball"></div><div id="bar_container"><div id="bar"></div></div></div></div>
 
-    <div id="content" class="grid_100" style="display:none">
+    <div id="content" style="display:none">
 
-        <div class="cont_grid _left">
-            <div class="card">
-                <h3>Hier steht ein Titel</h3>
-                <p>Und hier steht ein sehr langer Testtext. Dieser Text ist dazu da, um zu testen, wie ein Text aussehen würde.</p>
-            </div>
-        </div>
-
-        <div class="cont_grid _right">
-            <div class="card stick">
-                <h3>Hier steht ein Titel für Rechts</h3>
-                <p>Und hier steht ein sehr langer Testtext. Dieser Text ist dazu da, um zu testen, wie ein Text aussehen würde.</p>
-            </div>
-        </div> 
+        <!--Content Area-->
 
     </div>
 

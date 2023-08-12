@@ -4,16 +4,22 @@ if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').th
 
 var luckyapp_core = {
     modules:{
-        header: {
-            active: page_config_init.modules.header.active,
+        preset: { //Initiiert die Seite
+            active: true,
             files: {
-                js_main: "stylesheets/header/header.js",
-                css: ["stylesheets/header/header.css"]
+                js_main: "stylesheets/page/preset.js"
             },
             start: async function(){
-                await start_header_stylesheet();
-                luckyapp_core.load_check();
-            } 
+                try{
+                    await start_preset_stylesheet();
+                    //await cssLoader_(luckyapp_core.page_config.source + luckyapp_core.modules.preset.files.css_[0]);
+                    luckyapp_core.load_check();
+                }
+                catch(err){
+                    console.error("No preset");
+                    luckyapp_core.load_error(err, "Es ist kein Preset-type unter luckyapp_core.page_config.modules.preset.type angegeben.");
+                }
+            }
         },
         navbar: {
             active: page_config_init.modules.navbar.active,
@@ -49,37 +55,27 @@ var luckyapp_core = {
                 css: ["stylesheets/navbar/navbar.css"]
             },
             start: async function(){
-                await start_navbar_stylesheet();
-                luckyapp_core.load_check();
-            }
-        },
-        preset: {
-            active: page_config_init.modules.preset.active,
-            files: {
-                js_main: "stylesheets/page/grid.js",
-                js: ["stylesheets/page/preset.js"],
-                css_: ["stylesheets/page/grid.css"]
-            },
-            start: async function(){
-                if(luckyapp_core.page_config.modules.preset.type == "grid"){
-                    await start_grid_stylesheet();
-                    await cssLoader_(luckyapp_core.page_config.source + luckyapp_core.modules.preset.files.css_[0]);
+                try{
+                    await start_navbar_stylesheet();
                     luckyapp_core.load_check();
-                }else{
-                    console.error("No preset");
-                    luckyapp_core.load_error(undefined, "Es ist kein Preset-type unter luckyapp_core.page_config.modules.preset.type angegeben.");
+                }catch(err){
+                    luckyapp_core.load_error(err, "Navbar error");
                 }
             }
         },
-        content: {
-            active: page_config_init.modules.content.active,
+        content: { //Sorgt für die Einrichtung vom Content
+            active: true,
             files: {
                 js_main: "stylesheets/content/content.js",
                 css: ["stylesheets/content/content.css"]
             },
             start: async function(){
-                await start_content_stylesheet();
-                luckyapp_core.load_check();
+                try{
+                    await start_content_stylesheet();
+                    luckyapp_core.load_check();
+                }catch(err){
+                    luckyapp_core.load_error(err, "Content Error");
+                }
             }
         },
         footer: {
@@ -104,12 +100,16 @@ var luckyapp_core = {
                 css: ["stylesheets/footer/footer.css"]
             },
             start: async function(){
-                await start_footer_stylesheet();
-                luckyapp_core.load_check();
+                try{
+                    await start_footer_stylesheet();
+                    luckyapp_core.load_check();
+                }catch(err){
+                    luckyapp_core.load_error(err, "Footer error");
+                }
             }
         },
         version_history: {
-            active: true,
+            active: page_config_init.modules.version_history.active,
             files: {
                 js_main: "stylesheets/version_history/version_history.js",
                 css: ["stylesheets/version_history/version_history.css"]
@@ -189,7 +189,7 @@ var luckyapp_core = {
                 luckyapp_core.load_check();
             }
         },
-        news: {
+        /*news: {
             active: page_config_init.modules.news.active,
             files: {
                 js_main: "stylesheets/news/news.js",
@@ -200,7 +200,7 @@ var luckyapp_core = {
                 await start_news_stylesheet();
                 luckyapp_core.load_check();
             }
-        },
+        },*/
         cookies: {
             active: true,
             files: {
@@ -235,7 +235,10 @@ var luckyapp_core = {
     load_error: function(event, message){
         if(event != undefined){
             console.log(event);
-            error_show("Ein Fehler ist aufgetreten. Bitte überprüfe deine Internetverbindung. Sollte das Problem dadurch nicht behoben werden, bitte <a href='mailto:thebuissnesscreeper@gmail.com?subject=Luckyapp Fehlermeldung&amp;body="+ event.message +"%0A%0A"+ event.error.message +"%0A%0A"+ event.error.stack +"'>das Problem Melden</a>");
+            try{
+                error_show("Ein Fehler ist aufgetreten. Bitte überprüfe deine Internetverbindung. Sollte das Problem dadurch nicht behoben werden, bitte <a href='mailto:thebuissnesscreeper@gmail.com?subject=Luckyapp Fehlermeldung&amp;body="+ event.message +"%0A%0A"+ event.error.message +"%0A%0A"+ event.error.stack +"'>das Problem Melden</a>");
+            }catch{};
+            console.error("[LUCKYAPP LOAD ERROR Message] "+ message);
             document.getElementById("ball_container").innerHTML += "<p style='color:red; font-family: calibri; text-align:center'>Ein Fehler ist aufgetreten</p>"
             +"<p style='font-family: calibri; color:white; text-align:center'>Sie können das Laden der Seite erzwingen (die Seite ist dann unvollständig geladen) </p><button style='cursor:pointer' onclick='luckyapp_core.load_check(); console.warn(`Die Seite wird zwangsweise angezeigt`)'>Hier drücken, um die Seite zwangsweise zu laden.</button>";
         }else{
@@ -255,10 +258,10 @@ var loaded_modules_count = 0, load_status = 0;
 function load_luckyapp_core(){
     document.getElementById("page_config_script").remove();
     load_meta();
-    if(!luckyapp_core.page_config.modules.preset.active){
+    /*if(!luckyapp_core.page_config.modules.preset.active){
         loaded_modules_count++;
         luckyapp_core.load_error("Das Preset Modul unter luckyapp_core.page_config.modules.preset ist deaktiviert");
-    }
+    }*/
     luckyapp_core.modules.keylist = Object.keys(luckyapp_core.modules);
     for(i=0;i<luckyapp_core.modules.keylist.length;i++){
         if(luckyapp_core.modules[luckyapp_core.modules.keylist[i]].active){ //Wenn modul aktiv

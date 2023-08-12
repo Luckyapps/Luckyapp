@@ -1,7 +1,7 @@
 var navbar;
 
 async function start_navbar_stylesheet(){
-    if(luckyapp_core.modules.header.loaded || luckyapp_core.modules.navbar.forceload){
+    if(/*luckyapp_core.modules.header.loaded || */luckyapp_core.modules.navbar.forceload){
         header.innerHTML += "<div class='header_navbar'></div>";
         navbar = document.getElementsByClassName("header_navbar")[0];
         if(luckyapp_core.page_config.modules.navbar.custom_links){
@@ -23,9 +23,9 @@ async function start_navbar_stylesheet(){
         }
         luckyapp_core.modules.navbar.loaded = true;
     }else{
-        if(!luckyapp_core.modules.header.active){
+        /*if(!luckyapp_core.modules.header.active){
             luckyapp_core.modules.navbar.forceload = true;
-        }
+        }*/
         await sleep(1);
         start_navbar_stylesheet();
     }
