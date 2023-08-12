@@ -1,0 +1,43 @@
+:root{
+    --playbar-background-color: purple;
+    --playbar-color: orange;
+    --playbar-height: 20px;
+    --playbar-border-radius: 10px;
+}
+
+.audioContents{
+    display: flex;
+    gap: 20px;
+}
+
+.audioCard{
+    background: gray;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.playbutton{
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.playbarContainer{
+    margin-top: 10px;
+    background-color: var(--playbar-background-color);
+    height: var(--playbar-height);
+    border-radius: var(--playbar-border-radius);
+    width: 100%;
+
+}
+
+.playbar{
+    background-color: var(--playbar-color);
+    height: var(--playbar-height);
+    border-radius: var(--playbar-border-radius);
+    width: 0%;
+}

@@ -1,0 +1,30 @@
+.news_card{
+    background-color: orange;
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+    cursor:pointer;
+}
+
+.news_card h4{
+    margin-top:0;
+}
+
+.news_container{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.news_dataline{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.news_dataline div{
+    padding: 5px;
+    background: gray;
+    border-radius: 5px;
+    color: black;
+}

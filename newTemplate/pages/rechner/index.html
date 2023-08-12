@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html><head></head>
+  <body>
+    <script id="page_config_script">
+        var page_config_init = {
+            source: "../../",
+            modules:{
+                meta: {
+                    active: true,
+                    html_embed: true,
+                    title: "Rechner",
+                    apple_icon: "images/icons/icon-192x192.png",
+                    icon: {
+                        href: "images/icons/icon-512x512.png",
+                        type: "image/png",
+                    },
+                    description: "Beschreibung",
+                    theme_color: "black",
+                    viewport: "width=device-width",
+                    charset: "utf-8",
+                    manifest: "manifest.json"
+                },
+                header: {
+                    active: true,
+                    title: "Rechner",
+                    subtitle: "V2"
+                },
+                navbar: {
+                    active: true,
+                    custom_links: false,
+                    links: [
+                        {
+                            text: "Text, der erscheinen Soll",
+                            href: "absolute adresse",
+                            active: true
+                        }
+                    ]
+                },
+                preset: {
+                    active: true, //Muss true
+                    type: "grid", //false, zum deaktivieren -->error ["grid"]false
+                    prop: "2columns"
+                },
+                content: {
+                    active: true,
+                },
+                footer: {
+                    active: true,
+                    custom_links: false,
+                    links: [
+                        {
+                            text: "Text, der erscheinen Soll",
+                            href: "absolute adresse"
+                        }
+                    ]
+                },
+                version_history: {
+                    active: true,
+                    watermark: false
+                },
+                updates: {
+                    active: true,
+                    updatelist: false,
+                    updatebanner: true
+                },
+                fileloader: {
+                    active: true,
+                    files: {
+                        css: ["pages/rechner/rechner.css"],
+                        js: ["pages/rechner/rechner.js"]
+                    }, //links absolut von luckyapp_core.js aus
+                    functions:[] //nur Name, ohne () |--> geht nur, wenn js_main bei files gesetzt ist
+                },
+                error: {
+                    active: true,
+                },
+                news: {
+                    active: true,
+                    source: ["stylesheets/news/newslist.js"],
+                    list: "", //enthält die Id des listencontainers. Weglassen wenn nicht vorhanden
+                }
+            },
+            appearance: {
+                font_style: "calibri",
+                theme: "light"
+            }
+        }
+    </script>
+    <script src="../../luckyapp_core.js"></script>
+
+    <div id="wall"><div id="ball_container"><div id="ball"></div><div id="bar_container"><div id="bar"></div></div></div></div>
+
+    <div id="content" class="grid_100" style="display:none">
+
+        <div class="cont_grid _booth _middle">
+            <div id="r_container" class="card">
+                <div id="r_result_container">Los gehts!</div>
+                <div class="r_numbut" onclick="r_numbut_clicked(this)" value="7">7</div><div class="r_numbut" onclick="r_numbut_clicked(this)" value="8">8</div><div class="r_numbut" onclick="r_numbut_clicked(this)" value="9">9</div><div class="r_funcbut" onclick="r_numbut_clicked(this)" value="+">+</div><div class="r_funcbut" onclick="r_numbut_clicked(this)" value="*">*</div><div class="r_funcbut" onclick="r_numbut_clicked(this)" value="h">Hoch</div>
+                <div class="r_numbut" onclick="r_numbut_clicked(this)" value="4">4</div><div class="r_numbut" onclick="r_numbut_clicked(this)" value="5">5</div><div class="r_numbut" onclick="r_numbut_clicked(this)" value="6">6</div><div class="r_funcbut" onclick="r_numbut_clicked(this)" value="-">-</div><div class="r_funcbut" onclick="r_numbut_clicked(this)" value="/">/</div><div class="r_funcbut" onclick="r_numbut_clicked(this)" value="w">Wurzel</div>
+                <div class="r_numbut" onclick="r_numbut_clicked(this)" value="1">1</div><div class="r_numbut" onclick="r_numbut_clicked(this)" value="2">2</div><div class="r_numbut" onclick="r_numbut_clicked(this)" value="3">3</div><div class="r_funcbut" onclick="last_type = 'compute'; compute()">=</div><div class="r_funcbut" onclick="r_numbut_clicked(this)" value="Delete">CE</div>
+                <div class="r_numbut" style="grid-column: 1 / span 2;" onclick="r_numbut_clicked(this)" value="0">0</div><div class="r_numbut" onclick="r_numbut_clicked(this)" value=".">,</div>
+            </div>
+            <div class="card" style="text-align: center;width: 70%;">
+                <h3>Was kann der Rechner?</h3>
+                <p>Das ist ein Standard Rechner. Er kann einfache Rechenoperationen durchführen. Er beherrscht dabei die Grundrechenarten, sowie Punkt-vor-Strich Rechnung. Außerdem kann er zahlen Quadrieren und die Quadratwurzel ziehen. Auch einfache Klammern können eingegeben werden. Klammern in Klammern werden nicht unterstüzt. Wurzel und Quadratrechnung können nicht ineinander eingesetzt werden. Es kann auch nur eine Klammer in der Rechnung genuzt werden. Klammern dürfen nicht leer bleiben. Klammern müssen immer geschlossen werden.</p>
+            </div>
+            <div class="card" style="text-align: center;width: 70%;">
+                <h3>TODO:</h3>
+                <ul>
+                    <li>compute_history</li>
+                </ul>
+            </div>
+        </div> 
+
+    </div>
+
+  </body>
+</html>

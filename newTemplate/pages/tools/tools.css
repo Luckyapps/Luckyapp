@@ -1,0 +1,100 @@
+#heading h1{
+    font-size: 2em;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    gap: 30px;
+}
+
+.tcard{
+    color: black;
+    background-color: gray;
+    border-radius: 20px;
+    padding: 1em;
+}
+
+.tcard h2, .tcard h1, .tseccard h1, .tseccard h2{
+    margin-top: 0;
+}
+
+.tseccard{
+    background-color: #161616;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.nav a{
+    text-decoration: none;
+    color: white;
+    background-color: darkslategray;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.pw_type_button_selected{
+    background-color: #f0f0f0 !important;
+}
+
+.pw_type_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:10px;
+}
+
+.pw_type_container button{
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: darkgray;
+}
+
+.pw_settings_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pw_result_container{
+    display:none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#pw_result{
+    text-align:center;
+}
+
+.hangman_output{
+    display:flex;
+    gap:1em;
+    margin: 10px 0 10px 0;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.hangman_header{
+    margin: 0 0 10px 0;
+    text-decoration: underline;
+}
+
+button{
+    cursor: pointer;
+}
+
+
+

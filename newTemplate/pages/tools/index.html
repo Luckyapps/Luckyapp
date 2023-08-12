@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html><head></head>
+  <body>
+    <script id="page_config_script">
+        var page_config_init = {
+            source: "../../",
+            modules:{
+                meta: {
+                    active: true,
+                    html_embed: true,
+                    title: "Luckyapp --> Tools",
+                    apple_icon: "images/icons/icon-192x192.png",
+                    icon: {
+                        href: "images/icons/icon-512x512.png",
+                        type: "image/png",
+                    },
+                    description: "Tools Seite",
+                    theme_color: "black",
+                    viewport: "width=device-width",
+                    charset: "utf-8",
+                    manifest: "manifest.json"
+                },
+                header: {
+                    active: false,
+                    title: "Tools",
+                    subtitle: ""
+                },
+                navbar: {
+                    active: true,
+                    custom_links: false,
+                    links: [
+                        {
+                            text: "Text, der erscheinen Soll",
+                            href: "absolute adresse",
+                            active: true
+                        }
+                    ]
+                },
+                preset: {
+                    active: true, //Muss true
+                    type: "grid", //false, zum deaktivieren -->error ["grid"]false
+                    prop: "2columns",
+                    parameter: ["content-page"]
+                },
+                content: {
+                    active: true,
+                },
+                footer: {
+                    active: true,
+                    custom_links: false,
+                    links: [
+                        {
+                            text: "Text, der erscheinen Soll",
+                            href: "absolute adresse"
+                        }
+                    ]
+                },
+                version_history: {
+                    active: true,
+                    watermark: false
+                },
+                updates: {
+                    active: true,
+                    updatelist: false,
+                    updatebanner: true
+                },
+                fileloader: {
+                    active: true,
+                    files: {
+                        css: ["pages/tools/tools.css"],
+                        js_main: ["pages/tools/tools.js"]
+                    }, //links absolut von luckyapp_core.js aus
+                    functions:["pw_generator_init", "hangman_init"] //nur Name, ohne ()
+                },
+                error: {
+                    active: true,
+                },
+                news: {
+                    active: true,
+                    source: ["stylesheets/news/newslist.js"],
+                    list: "", //enthält die Id des listencontainers. Weglassen wenn nicht vorhanden
+                }
+            },
+            appearance: {
+                font_style: "calibri",
+                theme: "light"
+            }
+        }
+    </script>
+    <script src="../../luckyapp_core.js"></script>
+
+    <div id="wall"><div id="ball_container"><div id="ball"></div><div id="bar_container"><div id="bar"></div></div></div></div>
+
+    <div id="content" class="grid_100" style="display:none">
+
+        <div class="cont_grid _both _middle">
+            <div class="card" style="border:none">
+                <section id="heading" style="text-align: center;">
+                    <h1>Luckyapp Tools und Games</h1>
+                    <p>Eine Sammlung bestehend aus verschiedenen nützlichen Tools und Games.</p>
+                    <a href="">Hier gehts zu den alten Tools</a>
+                </section>
+                <section class="nav">
+                    <a href="#hangman">Hangman</a>
+                    <a href="#password"><span class="pw_type">Passwort</span> Generator</a>
+                    <a href="#assistant">Lucky-Assistant</a>
+                </section>
+                <section id="hangman" class="tseccard">
+                    <h2>Hangman</h2>
+                    <div class="tcard"></div>
+                </section>
+                <section id="password" class="tseccard">
+                    <h2><span class="pw_type">Passwort</span> Generator</h2>
+                    <div class="tcard">
+                        <!--<h1>Passwort Generator</h1>
+
+                        <button class="art wahl" id="pw" value="pw" onclick="arten(this)">Passwort</button>
+                        <button class="wahl" id="pin" value="pin" onclick="arten(this)">Pin</button>
+
+                        </br>
+                        <label for="number">Anzahl der Zeichen:</label> 
+                        <input type="number" id="number" name="Nummer eingeben" title="Nummer eingeben" value="8"></input>
+
+                        <button id="generate" onclick="generate()">Passwort generieren</button>
+
+                        <div id="fertig"><h2>Dein Passwort lautet: </h2><!--<input id="passwort"></input>--><!--<p id="passwort"></p></div>
+                        <!--<button onclick="copyPasskey()" id="copy">kopieren</button>-->
+                        <div class="pw_type_container">
+                            <button value="password" class="pw_type_button_selected">Passwort</button>
+                            <button value="pin">PIN</button>
+                        </div>
+                        <div class="pw_settings_container">
+                            Anzahl der Zeichen:
+                            <input type="number" id="pw_length_input" value="8"></input>
+                            <button id="pw_generate_button"><span class="pw_type">Passwort</span> generieren</button>
+                        </div>
+                        <div class="pw_result_container">
+                            <h3>Dein <span class="pw_type">Passwort</span> lautet:</h3>
+                            <div id="pw_result">sdggsagas</div>
+                        </div>
+                    </div>
+                </section>
+                <section id="assistant" class="tseccard">
+                    <h2>Lucky-Assistant</h2>
+                    <div class="tcard">
+                        <script src="https://assistant.thebuissnescree.repl.co/assistant_core.js"></script>
+    
+                        <p id="ausgabe" style="margin-top: 0; color:black">Frag mich was:</p>
+                        <input type="text" id="eingabe"></input>
+                        <button onclick="assistant_start()" id="startbutton">Senden</button>
+                    </div>
+                </section>
+            </div>
+        </div> 
+
+    </div>
+
+  </body>
+</html>

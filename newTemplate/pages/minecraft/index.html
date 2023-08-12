@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html><head></head>
+  <body>
+    <script id="page_config_script">
+        var page_config_init = {
+            source: "../../",
+            modules:{
+                meta: {
+                    active: true,
+                    html_embed: true,
+                    title: "Minecraft Server Status",
+                    apple_icon: "images/icons/icon-192x192.png",
+                    icon: {
+                        href: "images/icons/icon-512x512.png",
+                        type: "image/png",
+                    },
+                    description: "Beschreibung",
+                    theme_color: "black",
+                    viewport: "width=device-width",
+                    charset: "utf-8",
+                    manifest: "manifest.json"
+                },
+                header: {
+                    active: true,
+                    title: "Minecraft Server Status",
+                    subtitle: "By Luckyapps"
+                },
+                navbar: {
+                    active: false,
+                    custom_links: false,
+                    links: [
+                        {
+                            text: "Text, der erscheinen Soll",
+                            href: "absolute adresse",
+                            active: true
+                        }
+                    ]
+                },
+                preset: {
+                    active: true, //Muss true
+                    type: "grid", //false, zum deaktivieren -->error ["grid"]false
+                    prop: "2columns"
+                },
+                content: {
+                    active: true,
+                },
+                footer: {
+                    active: false,
+                    custom_links: false,
+                    links: [
+                        {
+                            text: "Text, der erscheinen Soll",
+                            href: "absolute adresse"
+                        }
+                    ]
+                },
+                version_history: {
+                    active: false,
+                    watermark: false
+                },
+                updates: {
+                    active: false,
+                    updatelist: false,
+                    updatebanner: false
+                },
+                fileloader: {
+                    active: true,
+                    files: {
+                        js_main: "pages/minecraft/minecraft.js"
+                    }, //links absolut von luckyapp_core.js aus erstes js file muss js_main sein
+                    functions:["laden"] //nur Name, ohne () |--> geht nur, wenn js_main bei files gesetzt ist
+                },
+                error: {
+                    active: true,
+                },
+                news: {
+                    active: false,
+                    source: ["stylesheets/news/newslist.js"],
+                    list: "", //enthält die Id des listencontainers. Weglassen wenn nicht vorhanden
+                }
+            },
+            appearance: {
+                font_style: "calibri",
+                theme: "light"
+            }
+        }
+    </script>
+    <script src="../../luckyapp_core.js"></script>
+
+    <div id="wall"><div id="ball_container"><div id="ball"></div><div id="bar_container"><div id="bar"></div></div></div></div>
+
+    <div id="content" class="grid_100" style="display:none">
+
+        <div class="cont_grid _both">
+            
+            <div class="card">
+                <h2>Serverstatus</h2>
+                <p id="motd">Lade motd...</p>
+                <img style="border-radius:0;" id="icon" alt="Lade icon..."></img>
+                <p id="version">Version: Laden...</p>
+                <p id="online">Online: Laden...</p>
+                <p id="ip">IP: ...</p>
+                <p id="beschreibung">Keine Beschreibung verfügbar.</p>
+                <p id="modinfo">Suche nach Mods...</p>
+                <ul id="mods"></ul>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Über Server Status</h2>
+            <p>Auf dieser Seite kann der Status des Luckyapp Minecraft Servers angesehen werden.</p>
+            <p>Es werden dabei alle Wichtigen Informationen zum Server angezeigt:
+                <ul>
+                    <li>Der Name</li>
+                    <li>Das Logo</li>
+                    <li>Die Spielversion</li>
+                    <li>Status</li>
+                    <li>Hostname</li>
+                    <li>Wenn verfügbar: eine Beschreibung</li>
+                    <li>Ob es ein Vanilla Server ist, oder ob es Mods gibt</li>
+                    <li>Wenn es Mods gibt: Welche Mods genuzt werden.</li>
+                </ul>
+            </p>
+            <p style="color:orange">Der Status wird alle 5 Minuten aktualisiert.</p>
+        </div>
+        
+    </div>
+
+  </body>
+</html>
