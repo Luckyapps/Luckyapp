@@ -42,7 +42,7 @@ var sources = {
         },
         loop1:{
             name: "LOOP1",
-            desciption: "Ein Loop für zwischendurch.",
+            description: "Ein Loop für zwischendurch.",
             source: "audio/LOOP 1.wav",
             type: "audio/wav"
         }
@@ -50,12 +50,15 @@ var sources = {
 }
 
 class audioObject{
-    constructor(source,name,desciption,type,image){
+    constructor(source,name,description,type,image, data){
         this.source = source;
         this.name = name;
-        this.desciption = desciption;
+        this.description = description;
         this.type = type;
         this.image = image;
+        try{
+            this.data = data;
+        }catch(err){}
     }
 }
 
@@ -70,9 +73,10 @@ var player = {
     },
     add: function(id, source, data){
         this.audioList.keylist.push(id);
-        this.audioList.audios[id] = new audioObject(source,data.name,data.desciption,data.type,data.image);
-        resetPlaybuttons();
-        loadPlaybuttons();
+        this.audioList.audios[id] = new audioObject(source,data.name,data.description,data.type,data.image,data);
+        /*resetPlaybuttons();
+        loadPlaybuttons();*/
+        reloadPlaybuttons();
     },
     check: function(id){
         for(i=0;i<this.audioList.keylist.length;i++){
@@ -139,6 +143,13 @@ var player = {
             console.log("RefreshPlaybar nicht gesetzt oder keine Playbar vorhanden.");
         }
         console.log(player);
+    },
+    changeProgress: function(playbar_progress, audio_id){
+        if(audio_id == player.currentAudio.id){
+            player.currentAudio.audio.currentTime = player.currentAudio.audio.duration * playbar_progress;
+        }else{
+            console.log("Das zur Playbar gehörende Audio ist aktuell nicht das aktive Audio.")
+        }
     }
 }
 
@@ -248,8 +259,20 @@ function playbarsclickeventlistener(e){
     var rect = e.target.getBoundingClientRect();
     var x = e.clientX - rect.left; //x position within the element.
     var y = e.clientY - rect.top;  //y position within the element.
-    console.log("x: "+ x +" | "+ "y: "+ y);
-    console.log(parseFloat(e.target.childNodes[0].style.width));
+    //console.log("x: "+ x +" | "+ "y: "+ y);
+    var playbar_progress, audio_id;
+    if(e.target.classList.contains("playbarContainer")){ //Klickposition unterscheiden
+        var width = parseFloat(window.getComputedStyle(e.target).getPropertyValue("width"));
+        playbar_progress = (1 / width) * x;
+        audio_id = e.target.childNodes[0].getAttribute("data-audio");
+    }else if(e.target.classList.contains("playbar")){
+        var width = parseFloat(window.getComputedStyle(e.target.parentElement).getPropertyValue("width"));
+        playbar_progress = (1 / width) * x;
+        audio_id = e.target.getAttribute("data-audio");
+    }else{
+        console.warn("Playbar Klickevent Fehler: Klassennamen überprüfen");
+    }
+    player.changeProgress(playbar_progress, audio_id);
 };//für Playbuttons eventlistener
 
 

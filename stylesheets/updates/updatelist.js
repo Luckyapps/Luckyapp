@@ -2,6 +2,13 @@ var updatelist_luckyapp = {
     "source": "Luckyapp",
     "content": [ 
         {
+            id: "dv.1.23101.0",
+            title: "Luckyapp Update 1|okt23",
+            name:"Audio API Playbar Update",
+            date: "10.10.2023",
+            type: "UPDATE",
+            description: "<ul><li>Playbar Funktionalität zur Audio API hinzugefügt.</li></ul>"
+        },{
             id: "dv.1.23051.0",
             title: "Luckyapp Update 1|mai23",
             name:"Luckyapp_Core Bugfix",
