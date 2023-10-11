@@ -2,6 +2,13 @@ var updatelist_luckyapp = {
     "source": "Luckyapp",
     "content": [ 
         {
+            id: "dv.1.23102.0",
+            title: "Luckyapp Update 2|okt23",
+            name:"Audio API Playbar Autoplay Update",
+            date: "11.10.2023",
+            type: "UPDATE",
+            description: "<ul><li>Klickt man auf die Playbar eines Audios, das gerade nicht abgespielt wird, wird dieses gestartet und zu der entsprechenden Stelle im Audio gespult.</li></ul>"
+        },{
             id: "dv.1.23101.0",
             title: "Luckyapp Update 1|okt23",
             name:"Audio API Playbar Update",

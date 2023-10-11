@@ -45,6 +45,12 @@ var sources = {
             description: "Ein Loop für zwischendurch.",
             source: "audio/LOOP 1.wav",
             type: "audio/wav"
+        },
+        loop4:{
+            name: "LOOP4",
+            description: "Ein Loop für zwischendurch.",
+            source: "audio/LOOP 4.wav",
+            type: "audio/wav"
         }
     }
 }
@@ -67,6 +73,7 @@ var player = {
     audioPlaying: false,
     playbuttons: [],
     playbars: [],
+    audios: [],
     audioList: {
         audios: sources.list,
         keylist: Object.keys(sources.list)
@@ -89,11 +96,12 @@ var player = {
     play: function(audio_id){
         if(!player.audioList.audios[audio_id].audio){
             player.audioList.audios[audio_id].audio = new Audio(player.audioList.audios[audio_id].source);
+            player.audios.push(player.audioList.audios[audio_id].audio);
             //player.audioList.audios[audio_id].audio.play();
             player.audioList.audios[audio_id].audio.addEventListener("play", (evt)=>{player.audioPlaying = true;if(player.audioList.audios[audio_id].buttons){playbuttons.update(player.audioList.audios[audio_id].buttons);}});
             player.audioList.audios[audio_id].audio.addEventListener("pause", (evt)=>{player.audioPlaying = false;if(player.audioList.audios[audio_id].buttons){playbuttons.update(player.audioList.audios[audio_id].buttons);}});
             player.audioList.audios[audio_id].audio.addEventListener("ended", (evt)=>{player.audioPlaying = false;if(player.audioList.audios[audio_id].buttons){playbuttons.update(player.audioList.audios[audio_id].buttons);}});
-            player.audioList.audios[audio_id].audio.addEventListener("timeupdate", (evt)=>{if(player.audioList.audios[audio_id].playbars){playbars.update(player.audioList.audios[audio_id].playbars);}});
+            player.audioList.audios[audio_id].audio.addEventListener("timeupdate", (evt)=>{if(player.audioList.audios[audio_id].playbars){playbars.update(player.audioList.audios[audio_id]);}});
         }
         var audio = player.audioList.audios[audio_id].audio;
         if(player.audioList.audios[audio_id].type == "radio"){
@@ -125,6 +133,12 @@ var player = {
         audio.pause();
         audio.currentTime = 0;
     },
+    stopAll: function(){
+        this.audios.forEach((elem)=>{
+            elem.pause();
+        });
+        this.audioPlaying = false;
+    },
     toggle: function(audio_id){
         if(this.audioPlaying){
             if(audio_id == this.currentAudio.id){
@@ -136,19 +150,27 @@ var player = {
         }else{
             this.play(audio_id);
         }
-        try{
+        /*try{
             refreshPlaybar(player.currentAudio);
         }
         catch{
             console.log("RefreshPlaybar nicht gesetzt oder keine Playbar vorhanden.");
-        }
-        console.log(player);
+        }*/
+        //console.log(player);
     },
-    changeProgress: function(playbar_progress, audio_id){
+    changeProgress: function(progress_factor, audio_id){ //Progess als Faktor (z.B. 0.74)
         if(audio_id == player.currentAudio.id){
-            player.currentAudio.audio.currentTime = player.currentAudio.audio.duration * playbar_progress;
+            player.currentAudio.audio.currentTime = player.currentAudio.audio.duration * progress_factor;
         }else{
-            console.log("Das zur Playbar gehörende Audio ist aktuell nicht das aktive Audio.")
+            //console.log(`Das zur Playbar gehörende Audio ${audio_id} ist aktuell nicht das aktive Audio.`);
+            player.toggle(audio_id);
+            if(0<player.currentAudio.audio.readyState){
+                player.currentAudio.audio.currentTime = player.currentAudio.audio.duration * progress_factor;
+            }else{
+                player.currentAudio.audio.onloadedmetadata = function(){
+                    player.currentAudio.audio.currentTime = player.currentAudio.audio.duration * progress_factor;
+                }
+            }
         }
     }
 }
@@ -183,10 +205,25 @@ var playbuttons = {
 }
 
 var playbars = {
-    update: function(playbars){
-        var audioTag = player.currentAudio.audio;
-        for(i=0;i<playbars.length;i++){
-            playbars[i].style.width = (100 / audioTag.duration) * audioTag.currentTime+"%";
+    update: function(audioElem){
+        var audioTag = audioElem.audio;
+        for(i=0;i<audioElem.playbars.length;i++){
+            audioElem.playbars[i].style.width = (100 / audioTag.duration) * audioTag.currentTime+"%";
+        }
+    },
+    updateAll: function(){
+        for(i=0;i<player.audioList.keylist.length;i++){
+            var elem = player.audioList.audios[player.audioList.keylist[i]];
+            if(typeof elem.audio != "undefined"){
+                var audioDuration = elem.audio.duration;
+                var audioPlaystate = player.audioList.audios[player.audioList.keylist[i]].audio.currentTime;
+                var progress = 100 / audioDuration * audioPlaystate;
+                if(elem.playbars){
+                    for(j=0;j<elem.playbars.length;j++){
+                        elem.playbars[j].style.width = progress +"%";
+                    }
+                }
+            }
         }
     }
 }
@@ -211,7 +248,7 @@ function loadPlaybuttons(){
         player.playbuttons[i].addEventListener("click",playbuttonclickeventlistener);
     }
     console.log(player);
-    loadPlaybars();
+    reloadPlaybars();
 }
 function playbuttonclickeventlistener(evt){player.toggle(evt.target.getAttribute("data-audio"))};//für Playbuttons eventlistener
 
@@ -275,6 +312,23 @@ function playbarsclickeventlistener(e){
     player.changeProgress(playbar_progress, audio_id);
 };//für Playbuttons eventlistener
 
+function resetPlaybars(){
+    for(i=0;i<player.playbars.length;i++){
+        player.playbars[i].removeEventListener("click", playbarsclickeventlistener);
+    }
+    player.playbars = []; //playbars zurücksetzen
+    for(i=0;i<player.audioList.keylist.length;i++){
+        if(player.audioList.audios[player.audioList.keylist[i]].playbars!=undefined){
+            player.audioList.audios[player.audioList.keylist[i]].playbars = undefined;
+        }
+    }
+}
+
+function reloadPlaybars(){
+    resetPlaybars();
+    loadPlaybars();
+    playbars.updateAll();
+}
 
 
 function loadMediaInterface(audio_id, artist){
