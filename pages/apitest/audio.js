@@ -78,6 +78,10 @@ var player = {
         audios: sources.list,
         keylist: Object.keys(sources.list)
     },
+    playerSettings: {
+        settings_version: 0
+    },
+    settings_storagename: "luckyappMusicApi",
     add: function(id, source, data){
         this.audioList.keylist.push(id);
         this.audioList.audios[id] = new audioObject(source,data.name,data.description,data.type,data.image,data);
@@ -172,6 +176,43 @@ var player = {
                 }
             }
         }
+    },
+    playlist:{
+        getNextSong: function(){
+            var nowPlaying = player.playlist_init[0];
+            player.playlist_init.shift();
+            return nowPlaying;
+        },
+        content: ["loop1", "loop2"]
+    },
+    settings: {
+        load: function(){
+            var storage = player.settings_storagename;
+            if(localStorage.getItem(storage)){
+                var settings = JSON.parse(localStorage.getItem(storage));
+                if(settings.settings_version != player.playerSettings.settings_version){
+                    player.settings.save();
+                    console.warn("Settings Aktualisiert");
+                }else{
+                    player.playerSettings = settings;
+                }
+            }else{
+                console.log(player.playerSettings);
+                player.settings.save();
+            }
+        },
+        save: function(){
+            var storage = player.settings_storagename;
+            localStorage.setItem(storage, JSON.stringify(player.playerSettings));
+        },
+        get: function(){
+            return player.playerSettings;
+        },
+        set: function(setting, value){
+            player.settings.load();
+            player.playerSettings[setting] = value;
+            player.settings.save();
+        }
     }
 }
 
@@ -229,6 +270,7 @@ var playbars = {
 }
 
 function loadPlaybuttons(){
+    player.settings.load();
     var playbuttons = document.getElementsByClassName("playbutton");
     for(i=0;i<playbuttons.length;i++){
         if(playbuttons[i].getAttribute("data-audio")){
